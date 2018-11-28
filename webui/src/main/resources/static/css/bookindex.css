@@ -1,0 +1,110 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+#bwrap{ width:1160px; margin:0 auto; }
+.suoyin{ height:40px; line-height:40px; color:#333;}
+.suoyin a{ color:#333;}
+.suoyin a:hover,.blink a:hover,.bc1 dd a:hover,.bc1 li a:hover{ color:#2e8cf9;}
+.bcon1{ height:466px; background:#fff url(../Images/conbg.png) 0 0 repeat-x;}
+.bcon1 img{ display:inline-block; margin-left:150px; margin-top:20px;}
+.bcon2{ margin-top:20px; margin-bottom:20px;}
+.bc1{ width:570px; height:120px; border-bottom:2px solid #2e8cf9; float:left; background:#fff; margin-top:20px;}
+.bc1 span{ display:inline-block; width:158px; height:118px; float:left; background:#c7d9f6 ; color:#2e8cf9; font-size:16px; text-align:center; line-height:20px; padding-top:40px; font-weight:bold;overflow: hidden;text-overflow: ellipsis;}
+.bc1 strong{ color:#f39700; font-size:16px; }
+.bc1 ul{ margin:16px 0 0 16px; float:left; width:300px; height:94px;     }
+.bc1 li{}
+.bc1 li a{ display:inline-block; color:#333; line-height:24px;    left: inherit; top: inherit;}
+.bc1  dd{ margin-top:8px;}
+.bc1 dd a{ height:34px; line-height:34px; color:#333; padding-left:16px; background:#fff; display:inline-block; width:332px;}
+.blink{ height:30px; line-height:30px; text-align:right; }
+.blink a{ color:#333;font-weight:bold}
+
+.bcon3{ height:342px; background: #fff url(../Images/conbg.png) 0 0 repeat-x;} 
+.bcon3 h3{ font-size:14px ; color:#2e8cf9; padding:16px 0 0 16px;}
+.bcon3 h3 span{ display:inline-block; font-size:14px; color:#999999; margin-left:12px;}
+
+.b-left{ width:172px; height:240px; float:left; margin:26px 16px 0 64px; }
+.b-right{ width:743px; height:242px; float:left; margin-top:30px; }
+.b-right dl{ display:inline-block; width:244px;  float:left;}
+.b-right dt a{ color:#2e8cf9; font-size:14px; font-weight:bold; margin-bottom:16px;display:inline-block;}
+.b-right dd{ line-height:20px; display:block;}
+
+/*图书列表*/
+#book_wrap{border-top: 2px solid #2e8cf9;}
+.book_nav{text-align: right;padding: 12px 0;height: 100%;}
+.book_nav a{width: 100px;height: 25px;line-height: 25px;text-align: center;font-size: 14px;color: #2570c7;background: #dbe3ee;border-radius: 12px;-webkit-border-radius:12px;-moz-border-radius:12px;margin-left: 20px;}
+.book_nav a:hover{font-weight: 600;}
+.book_list_con{margin-bottom: 20px;}
+.book_list_half{width: 560px;height: 100%;}
+.book_list_item_1{border: 1px solid #abcce7;background: #f2f6f9;height: 141px;position: relative;margin-bottom: 20px;overflow: hidden;}
+.book_item_fl{width: 199px;height: 100%;position: relative;}
+.book_item_fl .triangle{width: 0;height: 0;border: 7px solid transparent;border-right-color: #f2f6f9;position: absolute;top:50%;margin-top: -6px;right:0;z-index: 10;}
+.book_item_fl a{width: 100%;height: 100%;overflow: hidden;}
+.book_mask_bg{width: 100%;height: 100%;position: absolute;top:0;left:0;background: #000000;opacity: 0.5;filter: alpha(opacity=50);}
+.book_mask_text{width: 100%;height: 100%;position: absolute;top:0;left:0;}
+.book_mask_text .line{width: 18px;height: 3px;background: #ff7f00;margin-top: 32px;margin-left: 22px;}
+.book_mask_text .text{font-size: 17px;color: #ffffff;padding: 12px 0 0 22px;}
+.book_mask_text .count{font-size: 16px;color: #ff7f00;}
+.book_mask_text .count span{font-size: 28px;padding-left: 22px;padding-right: 5px;}
+.book_item_fr{padding: 10px 22px 0;width: 309px;}
+.book_item_fr ul li{font-size: 14px;}
+.book_item_fr ul li i{width: 4px;height: 4px;background:#ff7e00;margin:0 12px 0 0;}
+.book_item_fr ul li a{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align:middle;}
+.book_item_fr ul li a:hover{color: #2570c7;}
+/*系统工程*/
+.book_list_item_2{width: 100%;height: 42px;line-height:42px;background: #dde7f4;margin-bottom: 14px;}
+.book_list_item_2 span{font-size: 18px;color: #ffffff;}
+.book_item_red{background: #e16053;}
+.book_list_item_2 em{display:inline-block;vertical-align:middle;width: 30px;height: 24px;background: url(../images/img-icon/icon_list.png) no-repeat 0 -30px;margin:0 12px 5px 20px;}
+.book_list_item_2 .book_item_fl .triangle{border-right-color: #dde7f4;}
+.book_item_fr_list{width: 359px;}
+.book_item_fr_list a{font-size: 14px;padding-left: 38px;}
+.book_item_fr_list a:hover{color: #2570c7;}
+.book_item_green{background: #45b6ab;}
+.book_item_green em{background-position: -80px -30px;}
+.book_item_yellow{background: #e58527;}
+.book_item_yellow em{background-position: -37px -30px;}
+.book_item_blue{background: #4790e5;}
+.book_item_blue em{background-position: -120px -30px;}
+
+/*图书示例*/
+.data_heading{height: 48px;line-height: 48px;background: #dbe3ee;overflow: hidden;}
+.data_heading img{margin-right: 15px;vertical-align: top;}
+.data_heading h2{font-size: 20px;font-weight: bold;height: 48px;line-height:46px;}
+.data_heading h2 span{font-size: 14px;color: #707582;font-weight: normal;margin-left: 5px;}
+.data_body{border: 1px solid #dbe3ee;background: #f2f6f9;height:268px;}
+.data_body_text{padding: 24px;}
+.data_body_con{width: 536px;height: 226px;padding: 16px;border: 1px solid #dbe3ee;background: #eef2f7;}
+.data_body_con>a{width: 132px;height: 184px;overflow: hidden;}
+.data_body_con>a:hover img{transform: scale(1.1);-webkit-transform: scale(1.1);-moz-transform: scale(1.1);}
+.data_body_con>a img{transition: transform 0.3s;}
+.data_con_text{padding: 5px 0;margin-left: 24px;width: 345px;height: 174px;overflow: hidden;}
+.data_con_text h4 a{font-size: 15px;color: #2570c7;font-weight: 600;margin-bottom: 5px;width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.data_con_text p{font-size: 13px;line-height: 24px;}
+.data_con_text p span{color: #707582;}
+
+#map {margin:0;padding:0;width:1160px;height:460px;font-family:arial,helvetica,sans-serif;font-size:11pt; font-weight:bold; color:#2570c7}
+#map li {margin:0;padding:0;list-style:none;}
+#map li a {position:absolute;display:block; text-decoration:none;color:#000;}
+#map li a span {display:none;}
+/*#map li a:hover span {position:relative;display:block;width:349px;padding:5px;filter:alpha(opacity=80);opacity:0.8;}*/
+
+#map a.dis {top:198px;left:401px;width:60px;height:60px;}
+#map a.typ {top:287px;left:425px;width:60px;height:60px;}
+#map a.org {top:111px;left:430px;width:60px;height:60px;}
+#map a.leval {top:344px;left:500px;width:60px;height:60px;}
+#map a.author {top:345px;left:592px;width:60px;height:60px;}
+#map a.term {top:292px;left:668px;width:60px;height:60px;}
+#map a.chapter {top:205px;left:699px;width:60px;height:60px;}
+#map a.xcb {top:116px;left:672px;width:60px;height:60px;}
+#map a.fund {top:61px;left:599px;width:60px;height:60px;}
+#map a.pubdate {top:57px;left:508px;width:60px;height:60px;}
+
+.leftinfo {left: 33px;
+    margin-top: 175px;
+    width: 349px;
+    height: 300px;
+    position: absolute;}
+
+.leftinfo i, .rightinfo i {color:#2570c7;font-size:15px;font-weight:600;line-height:25px;}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>图书页</title>
+
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bookindex.css}"/>
+
+</head>
+<body>
+
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<!--nav_wrap-->
+<div id="bwrap">
+    <!--导航栏目-->
+    <div class="breadnav">
+        <a th:href="@{/home/index}" >首页</a>><span>图书</span>
+    </div>
+    <!--分散图-->
+    <div class="book_charts">
+        <div class="leftinfo">
+            <i id="previnfo">
+
+            </i>
+        </div>
+        <ul id="map">
+            <li><a class="dis" href="#" ></a></li>
+            <li><a class="typ" href="#"> </a> </li>
+            <li><a class="org" href="#"></a></li>
+            <li><a class="leval" href="#"></a></li>
+            <li><a class="author" href="#"></a></li>
+            <li><a class="term" href="#"></a></li>
+            <li><a class="chapter" href="#"></a></li>
+            <li><a class="xcb" href="#"></a></li>
+            <li><a class="fund" href="#"></a></li>
+            <li><a class="pubdate" href="#"></a></li>
+            <img  th:src="@{/Images/main-cicle-img.jpg}" />
+        </ul>
+    </div>
+
+
+    <!--图书列表-->
+    <div id="book_wrap">
+        <!-- 全部图书-->
+        <div class="book_list">
+            <div class="book_nav">
+                <a th:href="@{/Search/List}" >全部图书>></a><a th:href="@{/Search/List}">全部章>></a>
+            </div>
+            <div class="book_list_con clearfix">
+                <!-- 专业图书-->
+                <div class="book_list_half fl">
+                    <div class="book_list_item_1">
+                        <div class="book_item_fl fl">
+                            <i class="triangle"></i>
+                            <a th:href="@{/Search/List}" ><img th:src="@{/images/book_item-1.png}"  alt="" /></a>
+                            <div class="book_mask_bg"></div><!--半透明层-->
+                            <div class="book_mask_text">
+                                <a th:href="@{/Search/List}" ><p class="line"></p><span class="text">专业图书</span><p class="count"><span>12333</span>本</p></a>
+                            </div>
+                        </div>
+                        <div class="book_item_fr fl">
+                            <ul style="width: 332px;">
+                                <li><i></i><a target="_blank" th:href="@{/Search/List}"  title="@item.Name">图书222222222</a></li>
+                                <li><i></i><a target="_blank" th:href="@{/Search/List}"  title="">图书11111</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_red fl"><i class="triangle"></i><em></em><span>卫星库</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a th:href="@{Database/Search/List}" >123本图书</a><a >234章</a>
+                        </div>
+                    </div>
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_green fl"><i class="triangle"></i><em></em><span>121212</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a>123本图书</a><a>456章</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 章-->
+                <div class="book_list_half fr">
+                    <div class="book_list_item_1">
+                        <div class="book_item_fl fl">
+                            <i class="triangle"></i>
+                            <a  th:href="@{/Search/List}"><img th:src="@{/images/book_item-1.png}" alt="" /></a>
+                            <div class="book_mask_bg"></div><!--半透明层-->
+                            <div class="book_mask_text">
+                                <a   th:href="@{/Search/List}" ><p class="line"></p><span class="text">章</span><p class="count"><span>234</span>章</p></a>
+                            </div>
+                        </div>
+                        <div class="book_item_fr fl">
+                            <ul style="width:332px;">
+                                <li><i></i><a target="_blank"  title="@item.Title">测试测试</a></li>
+                                <li><i></i><a target="_blank"  title="@item.Title">测试测试</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 全部图书结束-->
+        <!-- 图书示例-->
+        <div id="data" class="database">
+            <div class="data_heading">
+                <h2><img th:src="@{/images/book-title.png}" alt="" />图书示例<span>Sample of Books</span></h2>
+            </div>
+            <div class="data_body">
+                <div class="data_body_text clearfix" id="booksample">
+                    <div class="loader"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 图书示例结束-->
+    </div>
+</div>
+
+
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

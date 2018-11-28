@@ -1,0 +1,98 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+#bwrap{ width:1160px; margin:0 auto; }
+
+/*图书列表*/
+#book_wrap{border-top: 2px solid #2e8cf9;}
+.book_nav{text-align: right;padding: 12px 0;height: 100%;}
+.book_nav a{width: 100px;height: 25px;line-height: 25px;text-align: center;font-size: 14px;color: #2570c7;background: #dbe3ee;border-radius: 12px;-webkit-border-radius:12px;-moz-border-radius:12px;margin-left: 20px;}
+.book_nav a:hover{font-weight: 600;}
+.book_list{margin-bottom: 20px;}
+.book_list_half{width: 560px;height: 100%;}
+.book_list_item_1{border: 1px solid #abcce7;background: #f2f6f9;height: 141px;position: relative;margin-bottom: 20px;overflow: hidden;}
+.book_item_fl{width: 199px;height: 100%;position: relative;}
+.book_item_fl .triangle{width: 0;height: 0;border: 7px solid transparent;border-right-color: #f2f6f9;position: absolute;top:50%;margin-top: -6px;right:0;z-index: 10;}
+.book_item_fl a{width: 100%;height: 100%;overflow: hidden;}
+.book_mask_bg{width: 100%;height: 100%;position: absolute;top:0;left:0;background: #000000;opacity: 0.5;filter: alpha(opacity=50);}
+.book_mask_text{width: 100%;height: 100%;position: absolute;top:0;left:0;}
+.book_mask_text .line{width: 18px;height: 3px;background: #ff7f00;margin-top: 32px;margin-left: 22px;}
+.book_mask_text .text{font-size: 17px;color: #ffffff;padding: 12px 0 0 22px;}
+.book_mask_text .count{font-size: 16px;color: #ff7f00;}
+.book_mask_text .count span{font-size: 28px;padding-left: 22px;padding-right: 5px;}
+.book_item_fr{padding: 10px 22px 0;width: 328px;}
+.book_item_fr ul li{font-size: 14px;}
+.book_item_fr ul li i{width: 4px;height: 4px;background:#ff7e00;margin:0 12px 0 0;}
+.book_item_fr ul li a{width:290px;line-height: 29px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align:middle;display: inline;}
+.book_item_fr ul li a:hover{color: #2570c7;}
+/*系统工程*/
+.book_list_item_2{width: 100%;height: 42px;line-height:42px;background: #dde7f4;margin-bottom: 14px;}
+.book_list_item_2 span{font-size: 18px;color: #ffffff;}
+.book_item_red{background: #e16053;width:240px;}
+.book_list_item_2 em{display:inline-block;vertical-align:middle;width: 30px;height: 24px;background: url(../images/img-icon/icon_list.png) no-repeat -60px -65px;margin:0 12px 5px 20px;}
+.book_list_item_2 .book_item_fl .triangle{border-right-color: #dde7f4;}
+.book_item_fr_list{width: 320px;}
+.book_item_fr_list a{font-size: 14px;padding-left: 38px;}
+.book_item_fr_list a:hover{color: #2570c7;}
+.book_item_green{background: #45b6ab;width:240px;}
+.book_item_green em{background-position: -125px -65px;}
+.book_item_yellow{background: #e58527;width:240px;}
+.book_item_yellow em{background-position: -92px -65px;}
+.book_item_blue{background: #4790e5;width:240px;}
+.book_item_blue em{background-position: -164px -65px;}
+
+/*图书示例*/
+.database .data_heading{height: 48px;line-height: 48px;background: #dbe3ee;overflow: hidden;}
+.database .data_heading img{margin-right: 15px;vertical-align: top;}
+.database .data_heading h2{font-size: 20px;font-weight: bold;height: 48px;line-height: 46px;}
+.database .data_heading h2 span{font-size: 14px;color: #707582;font-weight: normal;margin-left: 5px;}
+.data_body{border: 1px solid #dbe3ee;border-top:0;background: #f2f6f9;}
+.data_body_text{padding: 28px 24px;position: relative;}
+.data_body_con{width: 504px;padding: 16px;border: 1px solid #dbe3ee;background: #eef2f7;min-height:180px;}
+.data_body_con h4 a{font-size: 15px;color: #2570c7;font-weight: 600;margin-bottom: 5px;width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.data_body_con p{font-size: 13px;line-height: 24px;}
+.data_body_con p span{color: #707582;}
+
+/*期刊阅览*/
+.mag_look{margin-bottom: 35px;}
+.mag_look .data_heading{height: 36px;line-height: 36px;background: #dbe3ee;overflow: hidden;}
+.mag_look .data_heading h2{height:36px;width: 115px;font-size: 18px;color:#ffffff;background: #2e8cf9;text-align: center; line-height:35px;}
+.mag_look .data_heading span{font-size: 14px;color: #707582;font-weight: normal;margin: 5px 0 0 10px;*margin-bottom:10px;height: 20px;}
+.mag_look .more{color: #ff7e00;font-weight: 600;margin-right: 16px;}
+.data_list{width: 1000px;height:220px;margin: 0 auto;position: relative;}
+.data_list ul{position: absolute;top:0;left:0;}
+.data_list ul li{float: left;width: 138px;margin: 0 31px;text-align: center;}
+.data_list ul li .img{padding: 8px;border: 1px solid #dbe3ee;background: #f2f6f9;}
+.data_list ul li .text{font-size: 14px;margin-top: 8px;}
+.data_list ul li .img:hover{border-color: #2165b3;}
+.data_list ul li .text:hover{color: #2570c7;}
+.data_body_text>a{position: absolute;top:50%;margin-top: -30px;width: 40px;height: 40px;background: url(../images/img-icon/icon_list.png) no-repeat 0 -100px;}
+.data_body_text>.arrow_fl{left:30px;background-position: -46px -100px;}
+.data_body_text>.arrow_fr{right:30px;}
+
+
+#map {margin:0;padding:0;width:1160px;height:460px;font-family:arial,helvetica,sans-serif;font-size:11pt; font-weight:bold; color:#2570c7}
+#map li {margin:0;padding:0;list-style:none;}
+#map li a {position:absolute;display:block; text-decoration:none;color:#000;}
+#map li a span {display:none;}
+/*#map li a:hover span {position:relative;display:block;width:349px;padding:5px;filter:alpha(opacity=80);opacity:0.8;}*/
+
+#map a.dis {top:198px;left:401px;width:60px;height:60px;}
+#map a.org {top:287px;left:425px;width:60px;height:60px;}
+#map a.typ {top:111px;left:430px;width:60px;height:60px;}
+#map a.author {top:344px;left:500px;width:60px;height:60px;}
+#map a.doi {top:345px;left:592px;width:60px;height:60px;}
+#map a.recom {top:292px;left:668px;width:60px;height:60px;}
+#map a.xcb {top:205px;left:699px;width:60px;height:60px;}
+#map a.term {top:116px;left:672px;width:60px;height:60px;}
+#map a.fund {top:61px;left:599px;width:60px;height:60px;}
+#map a.leval {top:57px;left:508px;width:60px;height:60px;}
+
+.leftinfo {left: 33px;
+    margin-top: 175px;
+    width: 349px;
+    height: 300px;
+    position: absolute;}
+
+.leftinfo i, .rightinfo i {color:#2570c7;font-size:15px;font-weight:600;line-height:25px;}

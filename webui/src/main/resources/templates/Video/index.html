@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>视频页</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/videoindex.css}"/>
+</head>
+<body>
+
+<div th:replace="Fragments/header :: header">...</div>
+
+<div id="bwrap">
+    <div class="breadnav"><a th:src="@{/home/index}">首页</a>&gt;<span>视频</span></div><!--suoyin-->
+    <div class="scon1">
+        <div class="data_heading">
+            <h2><img height="48" width="54" th:src="@{/images/videoicon.png}" alt=""/>最热视频<span>Popular Videos</span></h2>
+        </div>
+        <div class="sconwrap" id="hotvideo">
+            <p><a href="#">
+                <img class="imgborder" width="219px" height="145px" th:src="@{/images/emptypic.png}" /></a><br/><span>航天大事记</span>
+            </p>
+            <p><a href="#">
+                <img class="imgborder" width="219px" height="145px" th:src="@{/images/emptypic.png}" /></a><br/><span>微重力环境是如何形成的</span>
+            </p>
+            <p><a href="/Video/Detail?doi=4a851340-3718-4c93-9522-5f6b796cebcb">
+                <img class="imgborder" width="219px" height="145px" th:src="@{/images/emptypic.png}" /></a><br/><span>阿波罗探月工程</span>
+            </p>
+            <p><a href="/Video/Detail?doi=09dda1fa-7317-4603-ae56-95e893aaa555">
+                <img class="imgborder" width="219px" height="145px" th:src="@{/images/emptypic.png}" /></a><br/><span>飞船的飞行轨道为什么会不断降低</span>
+            </p>
+        </div><!--sconwrap-->
+
+    </div><!--scon1-->
+
+    <div class="scon1">
+        <div class="data_heading">
+            <h2><img height="48" width="54" th:src="@{/images/videoicon.png}" />航天视频<span>Video</span></h2>
+        </div>
+
+        <div class="sconwrap" id="videoList">
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>阿波罗探月工程</dd>
+                <dd>
+                    <span><a href="#">阿波罗工程</a></span>
+                    <span><a href="#">探月</a></span>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>尼尔·奥尔登·阿姆斯特朗</dd>
+                <dd>
+                    <span><a href="#">阿姆斯特朗</a></span>
+                    <span><a href="#">阿波罗工程</a></span>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>韦纳·冯·布劳恩</dd>
+                <dd>
+                    <span><a href="#">火箭</a></span>
+                    <span><a href="#">航天技术</a></span>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>罗伯特·哈金斯·戈达德</dd>
+                <dd>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>火箭的故乡——中国</dd>
+                <dd>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>苏联英雄——加加林</dd>
+                <dd>
+                    <span><a href="#">载人航天</a></span>
+                    <span><a href="#">航天飞船</a></span>
+
+                </dd>
+
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank" href="#">
+                        <img class="imgborder" width="220px" height="145px" th:src="@{/images/emptypic.png}"/>
+                    </a>
+                </dt>
+                <dd>谢尔盖·帕夫洛维奇·科罗廖夫</dd>
+                <dd>
+                    <span><a href="#">火箭</a></span>
+                    <span><a href="#">卫星</a></span>
+                    <span><a href="#">航天飞船</a></span>
+
+                </dd>
+
+            </dl>
+
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

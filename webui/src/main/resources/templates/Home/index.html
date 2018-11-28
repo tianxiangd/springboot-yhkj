@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>中国航天科学技术知识库</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/index-change.css}"/>
+
+</head>
+<body>
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<!--nav-->
+
+<!--搜索框-->
+<div id="search">
+    <div class="ser_box">
+        <div class="form fl">
+            <div class="form_box fl">
+                <a href="javascript:;" class="drop_toggle"><span>工具书在线</span><i></i></a>
+                <div class="drop_down">
+                    <a href="javascript:;">航天百科</a>
+                    <a href="javascript:;">航天词典</a>
+                    <a href="javascript:;" class="no_bord_btm">航天型号</a>
+                </div>
+                <input type="text" class="ser-kw" placeholder="请输入关键词"/>
+            </div>
+            <a href="#" class="ser-btn"><i></i></a>
+        </div>
+        <div class="form form_1 fl">
+            <input type="text" class="ser-kw" placeholder="请输入关键词"/>
+            <a href="#" class="ser-btn"><i></i></a>
+        </div>
+        <a href="#" class="ret-all">全文检索</a>
+        <a href="#" class="ret-senior">高级检索</a>
+    </div>
+</div>
+<!--主体内容开始-->
+<!--轮播广告 资源总量-->
+<div id="ht_data">
+    <!--轮播广告-->
+    <div class="slide fl">
+        <div class="slide_ban">
+            <ul class="slide_list clearfix">
+                <li class="active"><a href="#"><img th:src="@{/images/index-slide-1.png}"  alt="中国航天科学技术平台发布啦！0"/></a></li>
+                <li><a href="#"><img th:src="@{/images/index-slide-1.png}"  alt="中国航天科学技术平台发布啦！1"/></a></li>
+                <li><a href="#"><img th:src="@{/images/index-slide-1.png}"  alt="中国航天科学技术平台发布啦！2"/></a></li>
+                <li><a href="#"><img th:src="@{/images/index-slide-1.png}"  alt="中国航天科学技术平台发布啦！3"/></a></li>
+                <li><a href="#"><img th:src="@{/images/index-slide-1.png}" alt="中国航天科学技术平台发布啦！4"/></a></li>
+            </ul>
+        </div>
+        <div class="slide_mask">
+            <div class="slide_mask_bg"></div>
+            <div class="slide_mask_text clearfix">
+                <div class="slide_mask_list fl">
+                    <h2>中国航天科学技术平台发布啦！0</h2>
+                </div>
+                <div class="indicator fr">
+                    <a href="#" class="active"></a><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--资源总量-->
+    <div class="resource_all fr">
+        <h2>资源总量</h2>
+        <div class="res_all_box">
+            <ul class="clearfix">
+                <li>
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-1.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>主题数据库</h3>
+                        <span>4</span>
+                    </div>
+                </li>
+                <li class="no_bord_rt">
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-2.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>条目</h3>
+                        <span>24886</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="clearfix">
+                <li>
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-3.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>图书</h3>
+                        <span>97778</span>
+                    </div>
+                </li>
+                <li class="no_bord_rt">
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-4.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>章</h3>
+                        <span>24886</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="clearfix no_bord_btm">
+                <li>
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-5.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>期刊</h3>
+                        <span>3423</span>
+                    </div>
+                </li>
+                <li class="no_bord_rt">
+                    <a href="#" class="fl"><img th:src="@{/images/img-icon/icon-all-6.png}" alt=""/></a>
+                    <div class="item_text">
+                        <h3>文章</h3>
+                        <span>286</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--广告横图1-->
+<div class="adv_horizontal">
+    <a href="#" class="adv_img"><img th:src="@{/images/adver-1.png}" alt=""/></a>
+    <a href="#" class="close"></a>
+</div>
+<!--数据库-->
+<div id="data" class="database">
+    <div class="data_heading">
+        <a href="#" class="fr more">MORE+</a>
+        <h2><img th:src="@{/iimages/data-title.png}" alt=""/>数据库<span>Database</span></h2>
+    </div>
+    <div class="data_body clearfix">
+        <div class="data_body_item fl">
+            <a href="#">
+                <img th:src="@{/images/database-1.png}" alt=""/>
+                <h3>总体技术数据库</h3>
+            </a>
+            <p class="line line_1"></p>
+            <p class="text">中国宇航出版社目前电子化的多有数据：航天科技书、章节、期刊...等，数据量超过100GB。</p>
+        </div>
+        <div class="data_body_item fl">
+            <a href="#">
+                <img th:src="@{/images/database-2.png}" alt=""/>
+                <h3>卫星数据库</h3>
+            </a>
+            <p class="line line_2"></p>
+            <p class="text">中国宇航出版社目前电子化的多有数据：航天科技书、章节、期刊...等，数据量超过100GB。</p>
+        </div>
+        <div class="data_body_item data_item_3 fl">
+            <a href="#">
+                <img th:src="@{/images/database-3.png}" alt=""/>
+                <h3>中国运载火箭技术研究院数据库</h3>
+            </a>
+            <p class="line line_3"></p>
+            <p class="text">中国宇航出版社目前电子化的多有数据：航天科技书、章节、期刊...等，数据量超过100GB。</p>
+        </div>
+        <div class="data_body_item fl">
+            <a href="#">
+                <img th:src="@{/images/database-4.png}" alt=""/>
+                <h3>工具书数据库</h3>
+            </a>
+            <p class="line line_4"></p>
+            <p class="text">中国宇航出版社目前电子化的多有数据：航天科技书、章节、期刊...等，数据量超过100GB。</p>
+        </div>
+    </div>
+</div>
+<!--阅读-->
+<div id="read" class="clearfix">
+    <div class="frag_read fl">
+        <h2 class="h2-title"><a href="#" class="fr more">MORE+</a><span>碎片化阅读</span></h2>
+        <div class="frag_con">
+            <a href="#" class="frag_img fl"><img th:src="@{/images/reading-img.png}" alt=""/></a>
+            <div class="frag_text fl">
+                <h3><a href="#">火箭卫星产品试验</a></h3>
+                <div class="frag_text_list">
+                    <p>所含章节：<span>10</span></p>
+                    <p>链接条目：<span>1000</span></p>
+                    <p>链接叙词表：<span>500</span></p>
+                    <p>相关图书：<span>30</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="read_experience fr">
+        <h2 class="h2-title"><a href="#" class="fr more">MORE+</a><span>阅读体验区</span></h2>
+        <div class="exp_con">
+            <div class="exp_tabs">
+                <a href="javascript:;" class="active">书</a><a href="javascript:;">章</a><a href="javascript:;">文章</a>
+            </div>
+            <div class="exp_item_con">
+                <div class="exp_item_list clearfix show">
+                    <ul class="exp_book clearfix">
+                        <li>
+                            <a href="#"><img th:src="@{/images/read-book-1.png}" alt=""/></a>
+                            <a href="#"><span>航天器自主操作的测量与控制</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><img th:src="@{/images/read-book-2.png}" alt=""/></a>
+                            <a href="#"><span>火箭卫星产品试验</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><img th:src="@{/images/read-book-3.png}" alt=""/></a>
+                            <a href="#"><span>深空探测器自主导航原理与技术</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="exp_item_list clearfix">
+                    <div class="exp_item fl">
+                        <h3><i></i><a href="#">航天器测控</a></h3>
+                        <p>航天器测控这一章节主要包括以下几部分的内容：航天器测控的功能、航天器测控的基本组成、地面测控中心的基本功能、航天器测控飞行控制技术现状。</p>
+                        <div class="author">
+                            <p>作者：<span>敬忠良等</span></p>
+                            <p>来源：<span>《航天器自主操作的测量与控制》</span></p>
+                        </div>
+                        <a href="#" class="look_det">查看详情>></a>
+                    </div>
+                    <div class="exp_item no_bord_rt fl">
+                        <h3><i></i><a href="#">航天器测控</a></h3>
+                        <p>航天器测控这一章节主要包括以下几部分的内容：航天器测控的功能、航天器测控的基本组成、地面测控中心的基本功能、航天器测控飞行控制技术现状。</p>
+                        <div class="author">
+                            <p>作者：<span>敬忠良等</span></p>
+                            <p>来源：<span>《航天器自主操作的测量与控制》</span></p>
+                        </div>
+                        <a href="#" class="look_det">查看详情>></a>
+                    </div>
+                </div>
+                <div class="exp_item_list clearfix">
+                    <div class="exp_item fl">
+                        <h3><i></i><a href="#">航天器测控</a></h3>
+                        <p>航天器测控这一章节主要包括以下几部分的内容：航天器测控的功能、航天器测控的基本组成、地面测控中心的基本功能、航天器测控飞行控制技术现状。</p>
+                        <div class="author">
+                            <p>作者：<span>敬忠良等</span></p>
+                            <p>来源：<span>《航天器自主操作的测量与控制》</span></p>
+                        </div>
+                        <a href="#" class="look_det">查看详情>></a>
+                    </div>
+                    <div class="exp_item no_bord_rt fl">
+                        <h3><i></i><a href="#">航天器测控</a></h3>
+                        <p>航天器测控这一章节主要包括以下几部分的内容：航天器测控的功能、航天器测控的基本组成、地面测控中心的基本功能、航天器测控飞行控制技术现状。</p>
+                        <div class="author">
+                            <p>作者：<span>敬忠良等</span></p>
+                            <p>来源：<span>《航天器自主操作的测量与控制》</span></p>
+                        </div>
+                        <a href="#" class="look_det">查看详情>></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--知识内容体系-->
+<div id="system" class="clearfix">
+    <div class="know_system fl">
+        <h2 class="h2-title"><a href="#" class="fr more">MORE+</a><span>知识内容体系</span></h2>
+        <div class="sys_con"><img th:src="@{/images/system-img-2.png}" alt=""/></div>
+    </div>
+    <div class="entry_system fr">
+        <h2 class="h2-title"><a href="#" class="fr more">MORE+</a><span>关联条目</span></h2>
+        <div class="entry_con">
+            <p class="line"></p>
+            <div class="entry_detail">
+                我国航天器工程设计实践是随着
+                <a href="#">长征一号系列火箭</a>、<a href="#">长征二号系列火箭</a>、<a href="#">长征三号系列火箭</a>和<a href="#">长征四号系列火箭</a>
+                的发展同步进行的。不同类型的航天器，需要用不同类型的运载火箭把它准确地送入太空运行轨道，以实现不同的空间应用目标。
+                <div class="popover">
+                    <ul>
+                        <li><i></i><a href="#" class="active">长征三号（CZ-3）</a></li>
+                        <li><i></i><a href="#">长征三号A（CZ-3）</a></li>
+                        <li><i></i><a href="#">长征三号B（CZ-3）</a></li>
+                        <li><i></i><a href="#">长征三号C（CZ-3）</a></li>
+                    </ul>
+                    <a href="#" class="look_det">查看详情>></a>
+                </div>
+            </div>
+            <p class="put_paper">冉隆燧《航天工程设计实践》</p>
+        </div>
+    </div>
+</div>
+<!--广告横图2-->
+<div class="adv_horizontal">
+    <a href="#" class="adv_img"><img th:src="@{/images/adver-2.png}" alt=""/></a>
+    <a href="#" class="close"></a>
+</div>
+<!--图书 期刊-->
+<div class="database book">
+    <div class="data_heading">
+        <a href="#" class="fr more">MORE+</a>
+        <div class="data_nav">
+            <a href="javascript:;" class="active">图书</a><a href="javascript:;">期刊</a><a href="javascript:;">图片</a><a href="javascript:;">多媒体</a>
+        </div>
+    </div>
+    <div class="data_body">
+        <div class="data_body_text show clearfix">
+            <div class="data_body_con fl">
+                <a href="#" class="fl"><img th:src="@{/images/book-1.png}" alt=""/></a>
+                <div class="data_con_text fl">
+                    <h4><a href="#">防空导弹直接侧向力/气动力复合控制技术防空导弹直接侧向力/气动力复合控制技术</a></h4>
+                    <p>作者：<span>李陟； 魏明英； 周荻； 姚来辉； 赵明元</span></p>
+                    <p>学科专业：<span>专业技术；测试技术</span></p>
+                    <p>制技术：<span>控制系统</span></p>
+                    <p>型号：<span>导弹； 面对空导弹； 控制系统</span></p>
+                    <p>研究层次：<span>基础研究</span></p>
+                    <p>机构：<span>航天科工飞航技术研究院</span></p>
+                </div>
+            </div>
+            <div class="data_body_con fr">
+                <a href="#" class="fl"><img th:src="@{/images/book-2.png}" alt=""/></a>
+                <div class="data_con_text fl">
+                    <h4><a href="#">防空导弹直接侧向力/气动力复合控制技术</a></h4>
+                    <p>作者：<span>李陟； 魏明英； 周荻； 姚来辉； 赵明元</span></p>
+                    <p>学科专业：<span>专业技术；测试技术</span></p>
+                    <p>制技术：<span>控制系统</span></p>
+                    <p>型号：<span>导弹； 面对空导弹； 控制系统</span></p>
+                    <p>研究层次：<span>基础研究</span></p>
+                    <p>机构：<span>航天科工飞航技术研究院</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="data_body_text">
+            <ul class="magazine_list clearfix">
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+                <li>
+                    <a href="#" class="mag_img"><img th:src="@{/images/magazine-index-1.png}" alt=""/></a>
+                    <a href="#" class="mag_text"><span>导航定位与授时</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="data_body_text">
+            <ul class="book_list clearfix">
+                <li>
+                    <a href="#"><img th:src="@{/images/book-index-1.png}" alt=""/></a>
+                    <div class="book_bg"></div>
+                    <div class="book_text"><a href="#">冷暖天文站</a></div>
+                </li>
+                <li>
+                    <a href="#"><img th:src="@{/images/book-index-2.png}" alt=""/></a>
+                    <div class="book_bg"></div>
+                    <div class="book_text"><a href="#">卫星发射塔架</a></div>
+                </li>
+                <li>
+                    <a href="#"><img th:src="@{/images/book-index-1.png}" alt=""/></a>
+                    <div class="book_bg"></div>
+                    <div class="book_text"><a href="#">冷暖天文站</a></div>
+                </li>
+                <li class="no_margin_rt">
+                    <a href="#"><img th:src="@{/images/book-index-2.png}" alt=""/></a>
+                    <div class="book_bg"></div>
+                    <div class="book_text"><a href="#">卫星发射塔架</a></div>
+                </li>
+            </ul>
+        </div>
+        <div class="data_body_text">
+            <ul class="video_list clearfix">
+                <li>
+                    <a href="#"><img th:src="@{/images/video_index_1.png}" alt=""/></a>
+                    <a href="#"><span>水在太空真的能往高处流吗</span></a>
+                </li>
+                <li>
+                    <a href="#"><img th:src="@{/images/video_index_1.png}" alt=""/></a>
+                    <a href="#"><span>水在太空真的能往高处流吗</span></a>
+                </li>
+                <li>
+                    <a href="#"><img th:src="@{/images/video_index_1.png}" alt=""/></a>
+                    <a href="#"><span>水在太空真的能往高处流吗</span></a>
+                </li>
+                <li class="no_margin_rt">
+                    <a href="#"><img th:src="@{/images/video_index_1.png}" alt=""/></a>
+                    <a href="#"><span>水在太空真的能往高处流吗</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--资讯-->
+<div id="info_dis" class="clearfix">
+    <div class="info fl">
+        <div class="data_heading">
+            <a href="#" class="fr more">MORE+</a>
+            <a href="#" class="title">图书</a>
+        </div>
+        <div class="data_body">
+            <div class="data_body_info">
+                <div class="info_img_list clearfix">
+                    <div class="info_img fl">
+                        <a href="#"><img th:src="@{/images/info-img-1.png}" alt=""/></a>
+                        <div class="slide_mask">
+                            <div class="slide_mask_bg"></div>
+                            <div class="slide_mask_text">
+                                <a href="#">航天技术第一时间助力四川、新疆抗震救灾</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info_img fl">
+                        <a href="#"><img th:src="@{/images/info-img-2.png}" alt=""/></a>
+                        <div class="slide_mask">
+                            <div class="slide_mask_bg"></div>
+                            <div class="slide_mask_text">
+                                <a href="#">长征七号火箭奔赴海南 天舟一号任务一号任</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="info_list">
+                    <li>
+                        <span class="fr">2017.05.22</span><i></i><a href="#">中国运载火箭技术研究院</a>
+                    </li>
+                    <li>
+                        <span class="fr">2017.05.22</span><i></i><a href="#">首批30卷《中国航天院士传记丛书》正式发布</a>
+                    </li>
+                    <li>
+                        <span class="fr">2017.05.22</span><i></i><a href="#">中国航天高峰论坛召开 聚焦创新发展</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 企业展示-->
+    <div class="com_dis fr">
+        <div class="com_title">
+            <a href="#" class="fr more">MORE+</a><h2>企业展示</h2>
+        </div>
+        <div class="com_dis_con">
+            <a href="#" class="img_dis fr"><img th:src="@{/images/display_img-1.png}" alt=""/></a>
+            <div class="com_con">
+                <h3><a href="#">中国运载火箭技术研究院</a></h3>
+                <p>中国运载火箭技术研究院（中国航天科技集团公司第一研究院）创建于1957年11月16日，是中国最大的导弹武器和运载火箭研究、设计、试制、试验和生产基地。</p>
+                <p>截至2015年底，研究院有从业人员约3.16万人，博士超过1000人，硕士超过5500人，院士7位，国家级专家20余人，国家“千人计划”专家3名，“新世纪百千万人... ...</p>
+                <a href="#" class="look_com">查看详情>></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--广告横图3-->
+<div class="adv_horizontal">
+    <a href="#" class="adv_img"><img th:src="@{/images/adver-3.png}" alt=""/></a>
+    <a href="#" class="close"></a>
+</div>
+<!--友情链接-->
+<div class="friend_link">
+    <span class="fl">友情链接</span>
+    <div class="company fl">
+        <a href="javascript:;" class="company_sel"><span>政府机构</span><i></i></a>
+        <div class="company_item">
+            <a href="javascript:;">政府机构1</a>
+            <a href="javascript:;">政府机构2</a>
+            <a href="javascript:;" class="no_bord_btm">政府机构3</a>
+        </div>
+    </div>
+    <div class="company fl">
+        <a href="javascript:;" class="company_sel"><span>军工集团</span><i></i></a>
+        <div class="company_item">
+            <a href="javascript:;">军工集团1</a>
+            <a href="javascript:;">军工集团2</a>
+            <a href="javascript:;" class="no_bord_btm">军工集团3</a>
+        </div>
+    </div>
+    <div class="company fl">
+        <a href="javascript:;" class="company_sel"><span>国际宇航</span><i></i></a>
+        <div class="company_item">
+            <a href="javascript:;">国际宇航1</a>
+            <a href="javascript:;">国际宇航2</a>
+            <a href="javascript:;" class="no_bord_btm">国际宇航3</a>
+        </div>
+    </div>
+    <div class="company fl">
+        <a href="javascript:;" class="company_sel"><span>媒体服务</span><i></i></a>
+        <div class="company_item">
+            <a href="javascript:;">媒体服务1</a>
+            <a href="javascript:;">媒体服务2</a>
+            <a href="javascript:;" class="no_bord_btm">媒体服务3</a>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/base.js"></script>
+</body>
+</html>

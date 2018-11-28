@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>航天机构库</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/topicbase.css}"/>
+</head>
+<body>
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<div id="bwrap">
+    <div class="breadnav">
+        <a th:href="@{/Home/Index}" >首页</a>&gt;<span>航天机构库</span>
+    </div>
+
+    <div data-doi="efdbce18-db37-4e42-ac7b-19af3d0a9318" id="box0" class="six_box">
+        <a title="北京航空航天大学库" href="#" class="db-cover">
+            <img th:src="@{/images/emptypic.png}"  alt=""/>
+        </a>
+        <div class="db-info">
+            <h2 title="北京航空航天大学库">
+                <a title="北京航空航天大学库" href="#">
+                    北京航空航天大学库
+                </a>
+            </h2>
+            <p></p>
+        </div>
+    </div>
+    <div data-doi="7a592371-9cfe-4e8c-8994-7e422ba36cf8" id="box1" class="six_box box_or">
+        <a title="酒泉卫星发射中心库" href="#" class="db-cover">
+            <img th:src="@{/images/emptypic.png}"  alt=""/>
+        </a>
+        <div class="db-info">
+            <h2 title="酒泉卫星发射中心库">
+                <a title="酒泉卫星发射中心库" href="#">
+                    酒泉卫星发射中心库
+                </a>
+            </h2>
+            <p>酒泉卫星发射中心库</p>
+        </div>
+    </div>
+
+    <input type="hidden" id="hidFlag" value="121"/>
+</div>
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

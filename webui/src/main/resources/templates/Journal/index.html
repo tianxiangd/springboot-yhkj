@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>期刊文献页</title>
+
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/journalindex.css}"/>
+</head>
+<body>
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<div id="bwrap">
+    <div class="breadnav">
+        <a th:href="@{/home/index}">首页</a>><span>期刊</span>
+    </div>
+    <!--分散图-->
+    <div class="book_charts">
+        <div class="leftinfo">
+            <i>
+
+            </i>
+        </div>
+        <ul id="map">
+            <li><a class="dis" href="#"></a></li>
+            <li><a class="typ" href="#"> </a> </li>
+            <li><a class="org" href="#"></a></li>
+            <li><a class="leval" href="#"></a></li>
+            <li><a class="author" href="#"></a></li>
+            <li><a class="term" href="#"></a></li>
+            <li><a class="doi" href="#"></a></li>
+            <li><a class="xcb" href="#"></a></li>
+            <li><a class="fund" href="#"></a></li>
+            <li><a class="recom" href="#"></a></li>
+            <img th:src="@{/images/mag-cicle-img.png}"/>
+        </ul>
+    </div>
+    <!--期刊列表-->
+    <div id="book_wrap">
+        <!-- 全部期刊-->
+        <div class="book_list">
+            <div class="book_nav">
+                <a target="_blank" href="#">全部期刊>></a><a target="_blank" href="#">全部文章>></a>
+            </div>
+            <div class="book_list_con clearfix">
+                <!-- 专业期刊-->
+                <div class="book_list_half fl">
+                    <div class="book_list_item_1">
+                        <div class="book_item_fl fl">
+                            <i class="triangle"></i>
+                            <a href="#"><img th:src="@{/images/mag_item-1.png}" alt="" /></a>
+                            <div class="book_mask_bg"></div><!--半透明层-->
+                            <div class="book_mask_text">
+                                <a href="#">
+                                    <p class="line"></p><span class="text">期刊</span>
+                                    <p class="count"><strong><span>12121</span>种</strong><strong><span> 12121</span>期</strong></p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="book_item_fr fl">
+                            <ul>
+
+                                <li><i></i><a target="_blank" href="#">@item.CName</a></li>
+                                <li><i></i><a target="_blank" href="#">@item.CName</a></li>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_red fl"><i class="triangle"></i><em></em><span>ddddd</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a href="#">1212  篇文章</a>
+                        </div>
+                    </div>
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_green fl"><i class="triangle"></i><em></em><span>wesss</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a href="#">1212 篇文章</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 文章-->
+                <div class="book_list_half fr">
+                    <div class="book_list_item_1">
+                        <div class="book_item_fl fl">
+                            <i class="triangle"></i>
+                            <a href="#"><img  th:href="@{/images/mag_item-2.png}"  alt="" /></a>
+                            <div class="book_mask_bg"></div><!--半透明层-->
+                            <div class="book_mask_text">
+                                <a href="#"><p class="line"></p><span class="text">文章</span><p class="count"><span>1212</span>篇</p></a>
+                            </div>
+                        </div>
+                        <div class="book_item_fr fl">
+                            <ul>
+
+                                <li><i></i><a target="_blank" href="#"></a></li>
+                                <li><i></i><a target="_blank" href="#"></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 通信技术-->
+
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_yellow fl"><i class="triangle"></i><em></em><span>通信技术</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a href="#">123篇文章</a>
+                        </div>
+                    </div>
+                    <div class="book_list_item_2">
+                        <div class="book_item_fl book_item_blue fl"><i class="triangle"></i><em></em><span>通信技术</span></div>
+                        <div class="book_item_fr_list fr">
+                            <a href="#">1212 篇文章</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 全部期刊结束-->
+        <!-- 期刊阅览-->
+        <div id="magazine" class="mag_look">
+            <div class="data_heading">
+                <h2 class="fl">期刊阅览</h2><span>Journal Reading</span>
+            </div>
+            <div class="data_body">
+                <div class="data_body_text">
+                    <div class="data_list">
+                        <ul class="clearfix" id="journal">
+                            <div class="loader"></div>
+
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="arrow_fl" ></a>
+                    <a href="javascript:;" class="arrow_fr"></a>
+                </div>
+            </div>
+        </div>
+        <!-- 期刊示例-->
+        <div id="data" class="database">
+            <div class="data_heading">
+                <h2><img th:src="@{/images/mag-title.png}"  alt="" />文章示例<span>Sample of Article</span></h2>
+            </div>
+            <div class="data_body">
+                <div class="data_body_text clearfix">
+
+                    <div class="data_body_con fl">
+                        <h4><a  th:href="@{/Article/ArticleDetail}" >bbbbbBCCCCSSSAA</a></h4>
+
+                        <p>作者：
+                            ABCCCC
+                        </p>
+                        <p>来源：国家知识库</p>
+                        <p>研究层次：高级</p>
+                        <p>机构：<span>地中海</span></p>
+                        <p>学科专业：<span>卫星</span></p>
+                        <p>型号：<span>卫星</span></p>
+                        <p>关键词：
+                            XXX XXXX
+                        </p>
+                    </div>
+
+                    <div class="data_body_con fr">
+                        <h4><a  th:href="@{/Article/ArticleDetail}" >ABCCCCSSSAA</a></h4>
+
+                        <p>作者：
+                            ABCCCC
+                        </p>
+                        <p>来源：百度百科</p>
+                        <p>研究层次：初级</p>
+                        <p>机构：<span>地中海</span></p>
+                        <p>学科专业：<span>卫星</span></p>
+                        <p>型号：<span>卫星</span></p>
+                        <p>关键词：
+                            XXX XXXX
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 期刊示例结束-->
+    </div>
+</div><!--bwrap-->
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

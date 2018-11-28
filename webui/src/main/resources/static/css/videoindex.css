@@ -1,0 +1,84 @@
+﻿
+#bwrap{ width:1160px; margin:0 auto; }
+.scon1{min-height:240px;     border: 1px solid #dbe3ee;background: #f2f6f9;width:100%;display:inline-block;}
+
+.scon1 h3{  height: 36px;  font-size: 16px; color: #ffffff; padding-left: 20px; line-height: 36px;padding-top: 15px;}
+
+.scon1 h3 span{ font-size:13px; margin-left:20px; margin-right:10px;padding:3px 10px;font-weight:600;}
+.scon1 h3 span a{ font-size:14px; margin-right:10px; color:#fff}
+.sconwrap{width:100%;display:inline-block;}
+.sconwrap p{ width:252px; height:146px; float:left; position:relative; margin-left:24px; margin-top:20px; }
+.sconwrap p img{width:219px;height:145px;}
+.sconwrap p span{ display:inline-block; height:30px; line-height:30px; color:#fff; background:#000;  filter:alpha(opacity:60); opacity:0.6; width:218px; position:absolute; top:116px; left:0px; padding-left:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+.sconwrap dl{min-height:186px; width:232px;margin-left:20px; padding:10px;display:inline-block;    border: 1px solid #dbe3ee; height: 201px;margin-top: 18px; }
+.sconwrap dl:hover {border-color: #2e8cf9;}
+.sconwrap dt a{ display:block; margin-bottom:5px;}
+.sconwrap dt img{width:219px;height:145px;}
+.sconwrap dd{min-height:2em;line-height:2em;display:inline-block;width:100%}
+.sconwrap dd .a_title{height:24px;width:220px;overflow:hidden;display:inline-block;text-overflow:ellipsis;white-space:nowrap;}
+.sconwrap dd  span a{ display:inline-block; float:left;border-radius:10px;padding: 1px 6px;height:17px; line-height:17px; background:#c7d9f6;  color:#000; text-align:center; margin-right:10px;}
+.sconwrap dd  strong a{ display:inline-block; float:right; /*background:url(../Images/dot11.png) 20px 6px no-repeat;*/}
+.sconwrap dd span {padding-left: 0px;display: inline-block;padding: 2px 4px;background: #c7d9f6;color: #333;border-radius: 10px;font-size: 12px;margin-left: 2px;}
+
+.sconwrap .audio_content{width:100%;min-height:200px;display:inline-block;background-color:#C6DFF3;margin-bottom:10px;}
+.sconwrap .audio_content .audio_contentp{width:100%;display:inline-block;margin:0;line-height:20px;height:auto;font-size:14px;font-weight:300;}
+.sconwrap .audio_content .lp{text-align:center;}
+.sconwrap .audio_content .rp{margin-top:10px;}
+.sconwrap .audio_content .psj{text-indent:2em;}
+#ctitle span{cursor:pointer;}
+#ctitle a{cursor:pointer;}
+.sconwrap .audio_content .audio_contenta{display:inline-table;width:12%}
+.sconwrap .audio_content .audio_contentl{width:160px;float:left;padding:5px 10px;margin-left:15px;}
+.sconwrap .audio_content .audio_contentl .audio_contentp img{height:180px;display:inline-block;width:132px;}
+.sconwrap .audio_content .audio_contentr{width:800px;float:right;padding:5px 10px;}
+
+.suoyin {height: 40px;line-height: 40px;color: #333;}
+.suoyin a {color: #333;}
+
+.selected_span{background-color:#fff;border-radius:15px;color:#2e8cf9;}
+
+
+.data_heading{height: 48px;line-height: 48px;background: #dbe3ee;overflow: hidden;}
+.data_heading img{margin-right: 15px;vertical-align: top;}
+.data_heading h2{font-size: 20px;font-weight: bold;height: 48px;line-height:46px;}
+.data_heading h2 span{font-size: 14px;color: #707582;font-weight: normal;margin-left: 5px;}
+.data_body{border: 1px solid #dbe3ee;background: #f2f6f9;height:268px;}
+
+#ctitle a {    font-size: 14px;
+    
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: 1px solid #2570c7;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+ .act {    color: #ffffff;
+    background: #2e8cf9;
+    border: 1px solid #2570c7;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+ .query_result {margin-top:0;}
+.query_num {font-size:13px;color:#707582;padding-left:20px;}
+.query_num span {color:#ff7e00;margin:0 3px;}
+.query_list li {padding:5px 20px;border-bottom:1px dashed #dbe3ee;min-height:204px;}
+.bookshelf_con {overflow:hidden;}
+.bookshelf_con h3 a {font-size:15px;color:#2570c7;font-weight:600;margin-bottom:10px;}
+.bookshelf_con p {font-size:13px;line-height:24px;height:48px;overflow:hidden;width:auto;}
+.bookshelf_con .author {font-size:13px;color:#707582;margin:12px 0;    padding: 23px;
+    padding-top: 70px;line-height:35px;}
+.gray_lighter {
+    color: #2570c7;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 15px;
+    background: #e4ecf6;
+    border: 1px solid #2570c7;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}

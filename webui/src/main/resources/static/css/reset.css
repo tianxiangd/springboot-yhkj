@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,span,a,label,pre,code,form,fieldset,legend,textarea,img,i,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}  /* 初始化标签在所有浏览器中的margin、padding值 */
+ul,ol,li {list-style:none}
+input,img,select,textarea,button{vertical-align:middle;border:0 none;outline:0 none;}
+button{background: transparent;}
+body{font:12px/1.5 "Microsoft YaHei","SimSun","Tahoma","Arial","sans-serif";color: #30394a;background: #edf2f6;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight: normal;}
+a {color:#30394a;text-decoration:none;display: inline-block;}
+a:hover {text-decoration:none;}
+i{display: inline-block;vertical-align: middle;}
+html{overflow-x: hidden;overflow-y: auto;}
+span{display: inline-block;}
+
+/*清除浮动*/
+.clear{clear: both;}
+.clearfix:before,.clearfix:after{content: '.';display: block;height: 0;visibility: hidden;clear: both;}
+.clearfix{overflow: hidden;zoom:100%;}/*解决浮动元素在ie7下margin-bottom失效的问题*/
+*html .clearfix{height: 1%;}
+
+/*左浮动 右浮动类*/
+.fl{float: left;}
+.fr{float: right;}
+.no_bord_btm{border-bottom: 0 !important;}
+.no_bord_rt{border-right: 0 !important;}
+.no_margin_rt{margin-right: 0 !important;}
+.no_margin_bt{margin-bottom: 0 !important;}
+.no_pad_bt{padding-bottom: 0 !important;}
+.no_pad_top{padding-top: 0 !important;}
+
+
+
+
+
+

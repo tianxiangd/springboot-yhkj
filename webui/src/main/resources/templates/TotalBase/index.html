@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>航天知识库</title>
+
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/totlebase.css}"/>
+</head>
+<body>
+
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<div id="bwrap">
+    <div class="breadnav">
+        <a th:href="@{/home/index}" >首页</a>&gt;<span>数据总库</span>
+    </div>
+
+
+
+
+    <div class="npanel wxcon2 gray_bg" style="margin-bottom:30px;">
+        <div class="data_heading">
+            <h2 class="fl">科技研究</h2><span>Science Studies</span>
+        </div>
+        <div id="bca">
+            <h4 class="reskind">
+                <span style="width:100%" id="bcaspan">
+                    <a class="res sw loaded act" data-res="book" data-more="" data-action="getcls" >图书</a>
+                    <a class="res sw" data-res="chapter" data-more="" data-action="getcls" >章</a>
+                    <a class="res sw" data-res="article" data-more="" data-action="getcls" >文章</a>
+                    <a class="seemore fr" style="background:none;color:#ff7e00;font-size:12px;" >MORE+</a>
+
+                </span>
+
+
+            </h4>
+            <div class="resbook"><div class="npanel w2 resname">
+                <h5 class="rescls">
+                    <a href="javascript:void(0);" title="总体技术" data-action="getdata" data-cls="4.1.1." data-res="book" data-key="name" data-val="总体技术" class="loaded act">总体技术</a>
+                    <a href="javascript:void(0);" title="推进技术" data-action="getdata" data-cls="4.1.2." data-res="book" data-key="name" data-val="推进技术">推进技术</a>
+                    <a href="javascript:void(0);" title="计算机技术" data-action="getdata" data-cls="4.1.4." data-res="book" data-key="name" data-val="计算机技术">计算机技术</a>
+                    <a href="javascript:void(0);" title="电子与通信技术" data-action="getdata" data-cls="4.1.5." data-res="book" data-key="name" data-val="电子与通信技术">电子与通信技术</a>
+                    <a href="javascript:void(0);" title="材料与制造技术" data-action="getdata" data-cls="4.1.7." data-res="book" data-key="name" data-val="材料与制造技术">材料与制造技术</a>
+                    <a href="javascript:void(0);" title="环境工程" data-action="getdata" data-cls="4.1.8." data-res="book" data-key="name" data-val="环境工程">环境工程</a>
+                    <a href="javascript:void(0);" title="测试技术" data-action="getdata" data-cls="4.1.9." data-res="book" data-key="name" data-val="测试技术">测试技术</a>
+                    <a href="javascript:void(0);" title="空气动力学" data-action="getdata" data-cls="4.1.10." data-res="book" data-key="name" data-val="空气动力学">空气动力学</a>
+                    <a href="javascript:void(0);" title="航天特种技术" data-action="getdata" data-cls="4.1.11." data-res="book" data-key="name" data-val="航天特种技术">航天特种技术</a>
+                    <a href="javascript:void(0);" title="航天医学" data-action="getdata" data-cls="4.1.13." data-res="book" data-key="name" data-val="航天医学">航天医学</a>
+                    <a href="javascript:void(0);" title="其他航天技术" data-action="getdata" data-cls="4.1.14." data-res="book" data-key="name" data-val="其他航天技术">其他航天技术</a>
+                    <a href="javascript:void(0);" title="项目管理" data-action="getdata" data-cls="4.2.1." data-res="book" data-key="name" data-val="项目管理">项目管理</a>
+                    <a href="javascript:void(0);" title="质量管理" data-action="getdata" data-cls="4.2.2." data-res="book" data-key="name" data-val="质量管理">质量管理</a>
+                    <a href="javascript:void(0);" title="系统工程管理" data-action="getdata" data-cls="4.2.3." data-res="book" data-key="name" data-val="系统工程管理">系统工程管理</a>
+                    <a href="javascript:void(0);" title="供应链管理" data-action="getdata" data-cls="4.2.5." data-res="book" data-key="name" data-val="供应链管理">供应链管理</a>
+                    <a href="javascript:void(0);" title="空间法" data-action="getdata" data-cls="4.2.6." data-res="book" data-key="name" data-val="空间法">空间法</a>
+                </h5>
+                <div class="resdata">
+                    <div class="rescls_4_1_1_">
+                        <ul class="tec_list">
+                            <li><i></i><span class="span_fir"><a title="星际航行概论" href="javascript:alertmsg(3);">星际航行概论</a></span><span class="span_sec" title="钱学森">作者：钱学森</span><span class="span_thr">出版时间：2008年</span></li>                                                            <li><i></i><span class="span_fir"><a title="导弹概论" href="javascript:alertmsg(3);">导弹概论</a></span><span class="span_sec" title="钱学森">作者：钱学森</span><span class="span_thr">出版时间：2009年</span></li>                                                            <li><i></i><span class="span_fir"><a title="多级火箭结构参数的优化理论" href="javascript:alertmsg(3);">多级火箭结构参数的优化理论</a></span><span class="span_sec" title="竺苗龙 竺雪君 竺致文">作者：竺苗龙 竺雪君 竺致文</span><span class="span_thr">出版时间：2011年</span></li>                    </ul><ul class="tec_list">                                        <li><i></i><span class="span_fir"><a title="飞行器结构力学" href="javascript:alertmsg(3);">飞行器结构力学</a></span><span class="span_sec" title="梁立孚 宋海燕 李海波">作者：梁立孚 宋海燕 李海波</span><span class="span_thr">出版时间：2012年</span></li>                                                            <li><i></i><span class="span_fir"><a title="航天工程设计实践" href="javascript:alertmsg(3);">航天工程设计实践</a></span><span class="span_sec" title="冉隆燧">作者：冉隆燧</span><span class="span_thr">出版时间：2012年</span></li>                                                            <li><i></i><span class="span_fir"><a title="导弹贮存延寿技术概论" href="javascript:alertmsg(3);">导弹贮存延寿技术概论</a></span><span class="span_sec" title="孟涛 张仕念 易当祥 赵韶平 张国彬 李新俊">作者：孟涛 张仕念 易当祥 赵韶平 张国彬 李新俊</span><span class="span_thr">出版时间：2013年</span></li>                                        </ul>                    <div class="clear"></div>                    <p class="seemore"><a class="gray_lighter" href="javascript:alertmsg()">查看全部<strong>总体技术</strong>图书</a></p></div></div></div><div class="npanel w2 rescode">                <h5 class="rescls">                <a href="javascript:void(0);" title="综合:姿态与轨道控制系统" data-action="getdata" data-cls="2.1.1.5." data-res="book" data-key="code" data-val="0.1.5" class="loaded act">综合:姿态与轨道控制系统</a>                                <a href="javascript:void(0);" title="综合:通信系统" data-action="getdata" data-cls="2.1.1.16." data-res="book" data-key="code" data-val="0.1.16">综合:通信系统</a>                                <a href="javascript:void(0);" title="卫星:通信广播卫星" data-action="getdata" data-cls="2.2.2.1." data-res="book" data-key="code" data-val="1.2.1">卫星:通信广播卫星</a>                                <a href="javascript:void(0);" title="卫星:导航定位卫星" data-action="getdata" data-cls="2.2.2.3." data-res="book" data-key="code" data-val="1.2.3">卫星:导航定位卫星</a>                                <a href="javascript:void(0);" title="火箭:运载火箭" data-action="getdata" data-cls="2.3.4.1." data-res="book" data-key="code" data-val="2.4.1">火箭:运载火箭</a>                                <a href="javascript:void(0);" title="火箭:结构与机构系统" data-action="getdata" data-cls="2.3.9.2." data-res="book" data-key="code" data-val="2.9.2">火箭:结构与机构系统</a>                                <a href="javascript:void(0);" title="空间探测器:姿态与轨道控制系统" data-action="getdata" data-cls="2.7.1.5." data-res="book" data-key="code" data-val="6.1.5">空间探测器:姿态与轨道控制系统</a>                </h5>                <div class="resdata">                <div class="rescls_2_1_1_5_">                    <ul class="tec_list">                    <li><i></i><span class="span_fir"><a title="动力学与控制及航天应用" href="javascript:alertmsg(3);">动力学与控制及航天应用</a></span><span class="span_sec" title="李俊峰">作者：李俊峰</span><span class="span_thr">出版时间：2008年</span></li>                                                            <li><i></i><span class="span_fir"><a title="X射线脉冲星导航系统原理与方法" href="javascript:alertmsg(3);">X射线脉冲星导航系统原理与方法</a></span><span class="span_sec" title="帅平 李明 陈绍龙 黄震">作者：帅平 李明 陈绍龙 黄震</span><span class="span_thr">出版时间：2009年</span></li>                                                            <li><i></i><span class="span_fir"><a title="航天器轨道机动动力学" href="javascript:alertmsg(3);">航天器轨道机动动力学</a></span><span class="span_sec" title="袁建平 和兴锁">作者：袁建平 和兴锁</span><span class="span_thr">出版时间：2010年</span></li>                    </ul><ul class="tec_list">                                        <li><i></i><span class="span_fir"><a title="固态振动陀螺与导航技术" href="javascript:alertmsg(3);">固态振动陀螺与导航技术</a></span><span class="span_sec" title="刘宇 路永乐 黎蕾蕾 方针 任春华 潘英俊">作者：刘宇 路永乐 黎蕾蕾 方针 任春华 潘英俊</span><span class="span_thr">出版时间：2010年</span></li>                                                            <li><i></i><span class="span_fir"><a title="干涉型光纤陀螺仪技术" href="javascript:alertmsg(3);">干涉型光纤陀螺仪技术</a></span><span class="span_sec" title="王巍">作者：王巍</span><span class="span_thr">出版时间：2010年</span></li>                                                            <li><i></i><span class="span_fir"><a title="光学陀螺系统与关键器件" href="javascript:alertmsg(3);">光学陀螺系统与关键器件</a></span><span class="span_sec" title="章燕申 伍晓明">作者：章燕申 伍晓明</span><span class="span_thr">出版时间：2010年</span></li>                                        </ul>                    <div class="clear"></div>                    <p class="seemore"><a class="gray_lighter" href="javascript:alertmsg()">查看全部<strong>综合:姿态与轨道控制系统</strong>图书</a></p></div></div></div></div>
+            <div class="reschapter" style="display: none;"></div>
+            <div class="resarticle" style="display: none;"></div>
+        </div>
+
+    </div><!--wxcon2-->
+
+
+
+    <div id="termino" class="tec_study knowledge gray_bg">
+        <div class="data_heading">
+            <h2 class="fl">知识条目</h2><span>Knowledge Entry</span>
+        </div>
+        <div class="tec_wrap">
+            <div class="tec_body">
+                <div class="tec_body_con no_bord_btm no_pad_bt">
+                    <div class="book_nav no_pad_top">
+
+                        <a class="res sw active" href="javascript:void(0);" data-action="getdata" title="通信广播卫星" data-cls="5." data-res="term" data-key="id" data-val="5.">通信广播卫星</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="对地观测卫星" data-cls="6." data-res="term" data-key="id" data-val="6.">对地观测卫星</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="导航定位卫星" data-cls="7." data-res="term" data-key="id" data-val="7.">导航定位卫星</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="科学与技术试验卫星" data-cls="8." data-res="term" data-key="id" data-val="8.">科学与技术试验卫星</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="空间探测器" data-cls="9." data-res="term" data-key="id" data-val="9.">空间探测器</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="载人及货运航天器" data-cls="10." data-res="term" data-key="id" data-val="10.">载人及货运航天器</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="一次使用航天运载器" data-cls="11." data-res="term" data-key="id" data-val="11.">一次使用航天运载器</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="重复使用航天运载器" data-cls="12." data-res="term" data-key="id" data-val="12.">重复使用航天运载器</a><a class="res sw" href="javascript:void(0);" data-action="getdata" title="世界航天发射中心" data-cls="13." data-res="term" data-key="id" data-val="13.">世界航天发射中心</a></div>
+                    <div class="tec_body_list_con clearfix">
+
+                        <div class="rescls_5_">                    <ul class="tec_list">                    <li><i></i><span class="span_fir"><a title="通信广播卫星" href="javascript:alertmsg(3);">通信广播卫星</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="通信广播卫星--阿根廷" href="javascript:alertmsg(3);">通信广播卫星--阿根廷</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“那沃”卫星" href="javascript:alertmsg(3);">“那沃”卫星</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="通信广播卫星--阿联酋" href="javascript:alertmsg(3);">通信广播卫星--阿联酋</a></span></li>                    </ul><ul class="tec_list">                                        <li><i></i><span class="span_fir"><a title="“瑟拉亚”卫星" href="javascript:alertmsg(3);">“瑟拉亚”卫星</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“阿联酋卫星”" href="javascript:alertmsg(3);">“阿联酋卫星”</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="通信广播卫星--埃及" href="javascript:alertmsg(3);">通信广播卫星--埃及</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“尼罗河卫星”" href="javascript:alertmsg(3);">“尼罗河卫星”</a></span></li>                    </ul><ul class="tec_list">                                        <li><i></i><span class="span_fir"><a title="通信广播卫星--澳大利亚" href="javascript:alertmsg(3);">通信广播卫星--澳大利亚</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“澳普图斯”卫星" href="javascript:alertmsg(3);">“澳普图斯”卫星</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="通信广播卫星--巴基斯坦" href="javascript:alertmsg(3);">通信广播卫星--巴基斯坦</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“巴基斯坦卫星”" href="javascript:alertmsg(3);">“巴基斯坦卫星”</a></span></li>                    </ul><ul class="tec_list">                                        <li><i></i><span class="span_fir"><a title="通信广播卫星--巴西" href="javascript:alertmsg(3);">通信广播卫星--巴西</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“星一”卫星" href="javascript:alertmsg(3);">“星一”卫星</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="通信广播卫星--德国" href="javascript:alertmsg(3);">通信广播卫星--德国</a></span></li>                                                            <li><i></i><span class="span_fir"><a title="“电视广播卫星”" href="javascript:alertmsg(3);">“电视广播卫星”</a></span></li>                    </ul><ul class="tec_list">                    </ul></div></div>
+                    <div class="look_btn"><a href="javascript:alertmsg();" class="gray_lighter">查看全部</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--图片和多媒体-->
+    <div id="pic" class="tec_study video gray_bg">
+        <div class="data_heading">
+            <h2 class="fl">图片和多媒体</h2><span>Picture &amp; Multimedia</span>
+        </div>
+        <div class="tec_wrap">
+            <div class="tec_tabs">
+                <a href="javascript:;" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" class="res sw act" data-res="pic" data-action="getdata">图片</a>
+                <a href="javascript:;" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" class="res sw" data-res="media" data-action="getdata">视频</a>
+                <a href="javascript:;" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" class="res sw" data-res="audio" data-action="getdata">音频</a>
+                <a class="seemore fr" style="font-size:12px;" href="javascript:alertmsg();">MORE+</a>
+            </div>
+            <div class="tec_body">
+                <div class="tec_body_con no_bord_btm no_pad_bt">
+                    <div class="tec_body_list respic" style="display: block;">
+                        <ul class="tec_list clearfix">
+                        <li>
+
+                            <div class="video_bg"></div>
+                            <div class="video_text"><a href="#">地理方位角示意图</a></div>
+                        </li>
+                        <li>
+                            <div class="video_bg"></div>
+                            <div class="video_text"><a href="javascript:alertmsg(3);">自转轴参考图</a></div></li>
+                        <li>
+                            <div class="video_bg"></div>
+                            <div class="video_text"><a href="javascript:alertmsg(3);">力偶不平衡示意图</a></div></li>
+                            <li class="no_margin_rt"><a href="javascript:alertmsg(3);">
+                                </a>
+                                <div class="video_bg"></div>
+                                <div class="video_text"><a href="javascript:alertmsg(3);">加速度计频带宽度</a></div></li></ul></div>
+                    <div class="tec_body_list resmedia" style="display:none;">
+
+                    </div>
+                    <div class="tec_body_list resaudio" style="display:none;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--wxcon4-->
+
+    <!--阅览室-->
+    <div id="read" class="tec_study room gray_bg">
+        <div class="data_heading">
+            <h2 class="fl">阅览室</h2><span>Reading Room</span>
+        </div>
+        <div class="tec_wrap">
+            <h4 class="tec_tabs">
+                <a data-res="pbook" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" data-action="getdata" class="res sw loaded act" href="javascript:void(0);">图书</a>
+                <a data-res="pjour" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" data-action="getdata" class="res sw" href="javascript:void(0);">期刊</a>
+                <a data-res="ptool" data-more="/Account/Logon?ReturnUrl=%2FDatabase%2FDbDetail%2FDBIndex" data-action="getdata" class="res sw" href="javascript:void(0);">工具书</a>
+
+                <a class="seemore fr" style="font-size:12px;" href="javascript:alertmsg();">MORE+</a>
+            </h4>
+            <div class="tec_body">
+                <div class="tec_body_con no_bord_btm no_pad_bt">
+                    <div class="tec_body_list respbook" data-pgc="22" style="display: block;">
+                        <ul class="tec_list clearfix"><li>
+                        <a href="javascript:alertmsg(3);" class="text">载人航天技术</a></li><li>
+
+                            <a href="javascript:alertmsg(3);" class="text">现代航天遥测技术</a></li>
+                            <li><a href="javascript:alertmsg(3);" class="text">空间模拟器设计技术</a></li>
+                            <li><a href="javascript:alertmsg(3);" class="text">运载火箭数字化工程</a></li>
+                            <li><a href="javascript:alertmsg(3);" class="text">胡海昌院士传记</a></li>
+                            <li class="no_margin_rt"><a href="javascript:alertmsg(3);" class="text">刘永才院士传记</a></li></ul></div>
+                    <div class="tec_body_list respjour" style="display:none;">
+
+                    </div>
+                    <div class="tec_body_list resptool" style="display:none;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

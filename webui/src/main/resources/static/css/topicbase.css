@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+#bwrap{ width:1160px;min-height:630px; margin:0 auto; }
+
+ 
+/* CSS six_box */
+.six_box { float:left; width:100%; background-color:#fff; border-top:3px solid #167e77; margin:10px auto;/*margin-left: 43px;margin-right: 43px;*/}
+.six_box .db-cover {display:block;overflow:hidden;height: 160px;width: 320px;float:left;}
+.six_box .db-cover img {/*height: 160px;*/width: 320px;}
+.six_box .db-info {padding:10px 15px;height:160px;overflow:hidden;}
+.six_box .db-info h2{font-size: 20px;font-weight: bold;text-decoration: none;margin-bottom:1em;}
+.six_box .db-info h2 a {color: #2570c7;}
+.six_box .db-info ul { width:100%; padding:8px 15px;height: 115px;}
+.six_box .db-info p { font-size:16px; color:#707582; line-height:1.5em; overflow:hidden;text-overflow:ellipsis;margin-top: 8px;text-indent:2em;}
+.six_box .db-info p span{font-size:14px;font-weight: bold; width:100%; padding-right:5px;}
+.six_box .db-info p a{ text-decoration:none; padding-right:5px; color:#3a3a3a;}
+.six_box .db-info p a:hover{ color:#69C;}
+
+.six_box.box_or{ border-top:3px solid #e57100;}
+.six_box.box_or .inputbox{ width:252px; height:30px; background-color:#e57100; color:#fff;font-size:18px;font-weight: bold; text-align:center; margin:5px 0 0 25px;}
+.six_box.box_red{ border-top:3px solid #ba0c2f;}
+.six_box.box_red .inputbox{background-color:#ba0c2f;}
+.six_box.box_blue{ border-top:3px solid #095dba;}
+.six_box.box_blue .inputbox{background-color:#095dba;}
+
+.six_box .db-info  .more .inputbox{ width:252px; height:30px; background-color:#167e77; color:#fff;font-size:18px;font-weight: bold; text-align:center; margin:5px 0 0 362px;}

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*header*/
+#header{min-width:1160px;}
+.head_box{width: 1160px;height:52px;line-height:52px;padding:32px 0;margin: 0 auto;}
+.head_menu{color: #3a4458;font-size: 13px;}
+.head_menu a{margin-left: 12px;}
+.head_menu a i{width: 24px;height: 24px;background: url(../images/img-icon/icon_list.png) no-repeat 0 0;margin:0 5px 2px 0;}
+.head_menu a.my_book i{background-position: -29px 0;}
+
+/*登录主体*/
+#content{height: 622px;min-width:1160px;background: url(../images/login-bg.png) no-repeat center top;}
+.login_main{width: 1160px;margin: 0 auto;}
+.login_box{width:496px;height: 476px;padding:0 73px;background: url(../images/login-box-bg.png) no-repeat;margin: 72px auto 0;}
+.login_box h1{padding-top:60px;height:60px;text-align: center;margin-bottom: 48px;}
+.login_box h1 img{vertical-align:text-bottom;}
+.login_box h1 em{font-size: 24px;font-weight:600;color: #ff7e00;margin-left: 15px;}
+.user{height: 50px;line-height:50px;background: url(../images/login-input-bg.png) no-repeat;position: relative;font-size: 0;margin-top: 35px;}
+.user input{padding:0 10px;width: 394px;height: 50px;line-height:50px;font-size: 18px;color: #7b828c;background: transparent;vertical-align: top;}
+.user label{display: inline-block;width: 86px;text-align: center;letter-spacing: 4px;margin-right:-4px;font-size: 18px;color: #5c636c;}
+.remember{margin-top: 15px;font-size: 15px;color: #5c636c;}
+.remember input{margin-right:8px;margin-bottom: 2px;*margin-bottom:0;}
+.remember a{color: #2e8cf9;}
+.remember a:hover{color: #ff7e00;}
+.login_sub_btn{margin-top: 30px;height: 50px;line-height: 50px;font-size: 20px;}
+.login_sub_btn a{height: 100%;color: #ffffff;text-align: center;border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px;}
+.login_btn{width: 320px;background: #2e8cf9;}
+.reg_btn{width: 158px;background: #8795ae;}
+.login_btn:hover{background: #4294f2;}
+.reg_btn:hover{background: #959fb1;}
+
+/*footer*/
+#footer{min-width:1160px;border-top: 4px solid #2e8cf9;padding: 35px 0 45px;}
+.foot_box{width: 1160px;margin: 0 auto;color: #666d78;font-size: 14px;text-align: center;}
+.foot_box p span{margin-right: 20px;}
+.foot_box p{line-height: 32px;}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>新闻列表</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link th:href="@{/css/zixunindex.css}" rel="stylesheet" />
+    <script  th:src="@{/js/jquery-1.11.3.min.js}" type="text/javascript"></script>
+    <script th:src="@{/js/base.js}"  type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<form th:action="@{/news/list}" method="post" class="form-horizontal" id="Search_form">
+    <input type="hidden" id="hidPageNum" name="pageNum" th:value="${pageInfo.pageNum}"/>
+<div id="info" class="info_wrap clearfix" style="width:1160px;margin:0 auto;height:829px;">
+    <div class="info_con fl">
+        <div class="info_title">
+            <p>共 <span th:text="${pageInfo.total}"></span> 条资讯，当前显示第 <span th:text="${pageInfo.pageNum}"></span> 页，共 <span th:text="${pageInfo.pages}"></span> 页</p>
+        </div>
+        <div class="info_list">
+            <ul>
+
+                <li class="info_list_bg" th:each="news : ${pageInfo.list}">
+                    <span class="fr span_time" th:text="${#dates.format(news.addDate, 'yyyy-MM-dd')}"></span><i></i>
+                    <a target="_blank" th:href="@{/news/details(id=${news.id})}"  th:text="${news.title}"></a>
+
+                </li>
+
+
+            </ul>
+        </div>
+        <div th:replace="Fragments/pager :: pager"></div>
+    </div>
+
+    <div class="rankings fr">
+        <div class="data_heading">
+            <a href="#" class="fr more">MORE+</a><h2 class="fl">点击排行</h2><span>Hot News</span>
+        </div>
+        <div class="rankings_body">
+            <ul>
+                <li th:each="news,newstart : ${pageInfo.list}">
+                    <span th:text="${newstart.count}"></span>
+                    <i></i>
+                    <a target="_blank" th:href="@{/news/details(id=${news.id})}"  th:text="${news.title}"></a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+</form>
+<script>
+    function doSearch(pageNum) {
+        $("#hidPageNum").val(pageNum);
+        $("#Search_form").submit();
+    }
+
+</script>
+</body>
+</html>

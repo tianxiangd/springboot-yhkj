@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>知识词条库</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link th:href="@{/css/wordindex.css}"  rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="Fragments/header :: header">...</div>
+
+<div id="bwrap">
+
+
+    <div class="xhser">
+        <form role="form" method="POST" th:action="@{/wordbase/index}" id="termform" class="termform">
+
+            <a href="#" class="drop_toggle" style="width:auto;line-height:34px;"><span>模糊</span><i></i></a>
+            <div class="drop_down" style="display:none;width:59px">
+                <a href="#" data-type="1">模糊</a>
+                <a href="#" data-type="0" class="no_bord_btm">精确</a>
+
+            </div>
+
+
+            <a id="btnResource" href="javascript:void(0)" class="term-ser-btnright" style="height:34px;"><i></i></a>
+        </form>
+
+    </div>
+    <div class="tmcon1">
+        <div class="tmleft">
+            <img th:src="@{/images/img_htbk.png}" /><br/>
+            <a target="_blank" href="#"><span>航天百科</span></a>
+
+            <p style="text-align:left;">
+                本站收录了近10万条航天及国防百科，重点推荐液体推进剂、惯性技术领域相关词条的查询。
+            </p>
+
+        </div>
+
+        <div class="tmleft">
+            <img th:src="@{/images/img_htcd.png}"/><br/>
+            <a target="_blank" href="#"><span>航天词典</span></a>
+            <p style="text-align:left;">
+                共收录航天词汇30万条，涵盖机械、电子、光学、自动控制、信息网络等与航天相关的所有学科，可以搜索中文名、英文名和常用缩略语。
+            </p>
+
+        </div><!--tmleft-->
+
+        <div class="tmleft" style="border:none">
+            <img th:src="@{/images/img_htxh.png}" /><br/>
+
+            <a target="_blank" href="#"><span>航天型号</span></a>
+            <p style="text-align:left;">
+                包括1957年以来全球成功发射的6491个航天器和8个国家（联盟）230余个运载器，介绍其发展概况、主要性能参数、总体布局和结构等。
+            </p>
+
+        </div><!--tmleft-->
+        <div class="footer2">
+            <ul class="footer2a" id="spacebaike">
+
+                <h4><a style="color: black;" href="#"><span>烃类燃料</span></a></h4> <p>烃类燃料主要包括航空煤油、航天煤油、高密度合成烃类燃料及甲烷、丙烷等饱和烃。作为推进剂使用的烃类燃料有航天煤油、甲烷和丙烷等。本章主要讨论航天煤油和液态甲烷，重点是航天煤...</p></ul>
+            <ul class="footer2a" id="spacedict">
+
+                <h4><a style="color: black;" href="#"><span>AIAA</span></a></h4> <p>1.Aerospace Industries Association of America 美国航空航天工业协会 2.Aerospace Industry Analyst...</p></ul>
+
+            <ul class="footer2a" style="border-right:none;" id="spacetype">
+
+                <h4><a style="color: black;" href="#"><span>“嫦娥”探测器</span></a></h4> <p>所属国家/地区/国际组织：中国
+                航天器类型：空间探测器
+                “嫦娥”（Chang'e）探测器是中国的月球探测器（见图5-85），目前已发射嫦娥-1 和嫦娥-2。嫦娥-1于...</p></ul>
+
+        </div>
+    </div><!--tmcon1-->
+</div>
+
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

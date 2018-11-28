@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+</head>
+<body>
+<!--header-->
+
+<!--登录主体-->
+<div id="content">
+    <div class="login_main clearfix">
+        <div class="login_box">
+            <h1><img th:src="@{/images/login-name-icon.png}"  alt=""/><em>用户登录</em></h1>
+            <form role="form" method="POST" th:action="@{/user/login}" >
+                <div class="form">
+                    <span id="basic-addon0">&nbsp;</span>
+                    <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
+                    <div class="user">
+                        <label for="user">账号</label>
+                        <input type="text" id="user_name" name="username"  class="user_name"  aria-describedby="basic-addon1"/>
+                    </div>
+                    <div class="user">
+                        <label for="pwd">密码</label>
+                        <input type="password" id="password" name="password" class="pwd_name" aria-describedby="basic-addon2" />
+                    </div>
+                    <div class="remember">
+                        <a href="#" class="forget fr">忘记密码</a>
+                        <label>
+                            <input type="checkbox" name="chkPwd" class="chk_pwd"/>记住密码
+                        </label>
+                    </div>
+                    <div class="login_sub_btn">
+                        <a href="javascript:;"  class="login_btn fl" >立即登录</a>
+                        <a href="#" class="reg_btn fr">用户注册</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".login_btn").on('click',function () {
+            $('form').submit();
+        });
+
+    });
+    $(document).ready(function () {
+        $(".fancybox").fancybox();
+    });
+</script>
+
+</body>
+</html>
