@@ -33,7 +33,7 @@ import com.springboot.yhkj.admin.util.PageUtil;
 @Controller
 public class NewsController {
 
-	@Autowired
+	/*@Autowired
 	private NewsService newsService;
 
 	@Autowired
@@ -72,12 +72,12 @@ public class NewsController {
 	}
 	
 	
-	/**
+	*//**
 	 * 文章新增、修改跳转
 	 * @param model
 	 * @param newsCategory
 	 * @return
-	 */
+	 *//*
 	@GetMapping("/admin/newsEdit")
 	public String newsEditGet(Model model,News news) {
 		NewsCategory newsCategory = new NewsCategory();
@@ -92,14 +92,14 @@ public class NewsController {
 		return "news/newsEdit";
 	}
 	
-	/**
+	*//**
 	 * 文章新增、修改提交
 	 * @param model
 	 * @param newsCategory
 	 * @param imageFile
 	 * @param httpSession
 	 * @return
-	 */
+	 *//*
 	@PostMapping("/admin/newsEdit")
 	public String newsEditPost(Model model,News news, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
 		for (MultipartFile file : imageFile) {
@@ -155,6 +155,6 @@ public class NewsController {
 		newsService.updateState(news);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, null, null);
 		return object;
-	}
+	}*/
 	
 }

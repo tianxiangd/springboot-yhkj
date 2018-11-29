@@ -7,11 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import com.springboot.yhkj.admin.model.NewsCategory;
+import org.springframework.stereotype.Service;
 
-@Mapper
-public interface NewsCategoryService {
+@Service
+public class NewsCategoryService {
 	
-	@Select("SELECT * FROM `inspur`.`news_category` where id = #{id};")
+	/*@Select("SELECT * FROM `inspur`.`news_category` where id = #{id};")
 	NewsCategory findById(NewsCategory newsCategory);
 	
 	@Select({
@@ -44,5 +45,5 @@ public interface NewsCategoryService {
 	int update(NewsCategory newsCategory);
 	
 	@Update("UPDATE `inspur`.`news_category`SET `state` = #{state} WHERE `id` = #{id};")
-	int updateState(NewsCategory newsCategory);
+	int updateState(NewsCategory newsCategory);*/
 }

@@ -1,34 +1,44 @@
 package com.springboot.yhkj.admin.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
+@Entity
 public class Admin extends BaseObject {
-
-	private long id;
-	private String userName;
+	@Id
+	private Integer id;
+	private String username;
 	private String password;
 	private String realName;
 	private int age;
-	private String phoneNumber;
+
 	private String headPicture;
+
 	private Date addDate;
 	private Date updateDate;
 	private int state;
+	private String role;
+	private String email;
+	private String phone;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -55,13 +65,6 @@ public class Admin extends BaseObject {
 		this.age = age;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
 
 	public String getHeadPicture() {
 		return headPicture;
@@ -94,5 +97,30 @@ public class Admin extends BaseObject {
 	public void setState(int state) {
 		this.state = state;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(@NotNull AdminRole role) {
+		this.role = role.toString();
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 
 }

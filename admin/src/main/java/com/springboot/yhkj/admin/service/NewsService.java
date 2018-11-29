@@ -9,11 +9,12 @@ import org.apache.ibatis.annotations.Update;
 
 import com.springboot.yhkj.admin.model.News;
 import com.springboot.yhkj.admin.util.Constant;
+import org.springframework.stereotype.Service;
+
+@Service
+public class NewsService {
 	
-@Mapper
-public interface NewsService {
-	
-	@Select("SELECT * FROM inspur.NEWS WHERE ID = #{id};")
+	/*@Select("SELECT * FROM inspur.NEWS WHERE ID = #{id};")
 	News findById(News news);
 	
 	@Select({
@@ -78,6 +79,6 @@ public interface NewsService {
 	int update(News news);
 	
 	@Update("UPDATE `inspur`.`news` SET `state` = #{state}, `commendState` = #{commendState}, `browses` = #{browses}, `likes` = #{likes}, `comments` = #{comments}, `score` = #{score} WHERE `id` = #{id};")
-	int updateState(News news);
+	int updateState(News news);*/
 	
 }

@@ -29,10 +29,10 @@ import com.springboot.yhkj.admin.util.PageUtil;
 @Controller
 public class NewsCategoryController {
 
-	@Autowired
+	/*@Autowired
 	private NewsCategoryService newsCategoryService;
 	
-	/**
+	*//**
 	 * 文章分类列表
 	 * @param newsCategory
 	 * @param pageCurrent
@@ -40,7 +40,7 @@ public class NewsCategoryController {
 	 * @param pageCount
 	 * @param model
 	 * @return
-	 */
+	 *//*
 	@RequestMapping("/admin/newsCategoryManage_{pageCurrent}_{pageSize}_{pageCount}")
 	public String newsCategoryManage(NewsCategory newsCategory,@PathVariable Integer pageCurrent,@PathVariable Integer pageSize,@PathVariable Integer pageCount, Model model) {
 		//判断
@@ -62,12 +62,12 @@ public class NewsCategoryController {
 		return "news/newsCategoryManage";
 	}
 	
-	/**
+	*//**
 	 * 文章分类新增、修改跳转
 	 * @param model
 	 * @param newsCategory
 	 * @return
-	 */
+	 *//*
 	@GetMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditGet(Model model,NewsCategory newsCategory) {
 		if(newsCategory.getId()!=0){
@@ -77,14 +77,14 @@ public class NewsCategoryController {
 		return "news/newsCategoryEdit";
 	}
 	
-	/**
+	*//**
 	 * 文章分类新增、修改提交
 	 * @param model
 	 * @param newsCategory
 	 * @param imageFile
 	 * @param httpSession
 	 * @return
-	 */
+	 *//*
 	@PostMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditPost(Model model,NewsCategory newsCategory, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
 		for (MultipartFile file : imageFile) {
@@ -121,6 +121,6 @@ public class NewsCategoryController {
 		newsCategoryService.updateState(newsCategory);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, null, null);
 		return object;
-	}
+	}*/
 	
 }
