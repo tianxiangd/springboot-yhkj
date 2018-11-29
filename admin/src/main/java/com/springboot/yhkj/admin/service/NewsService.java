@@ -2,6 +2,8 @@ package com.springboot.yhkj.admin.service;
 
 import java.util.List;
 
+import com.springboot.yhkj.admin.dao.AdminDao;
+import com.springboot.yhkj.admin.dao.NewsDao;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -11,74 +13,34 @@ import com.springboot.yhkj.admin.model.News;
 import com.springboot.yhkj.admin.util.Constant;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service
 public class NewsService {
-	
-	/*@Select("SELECT * FROM inspur.NEWS WHERE ID = #{id};")
-	News findById(News news);
-	
-	@Select({
-		"<script>",
-		"SELECT N.*,C.NAME AS CATEGORYNAME,C.IMAGE AS CATEGORYIMAGE FROM inspur.NEWS N ",
-		"LEFT JOIN inspur.NEWS_CATEGORY C ON N.CATEGORY = C.ID ",
-		"WHERE N.STATE = 1 ",
-			"<when test='title!=null'>",
-				"AND N.TITLE LIKE CONCAT('%',#{title},'%')",
-			"</when>",
-			"<when test='category!=0'>",
-				"AND category = #{category}",
-			"</when>",
-			"<when test='commendState!=0'>",
-				"AND commendState = #{commendState}",
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByAddDateAsc+"\"'>",
-				"order by "+Constant.OrderByAddDateAsc+",addDate desc",
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByAddDateDesc+"\"'>",
-				"order by "+Constant.OrderByAddDateDesc,
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByBrowsesDesc+"\"'>",
-				"order by "+Constant.OrderByBrowsesDesc+",addDate desc",
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByCommentsDesc+"\"'>",
-				"order by "+Constant.OrderByCommentsDesc+",addDate desc",
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByLikesDesc+"\"'>",
-				"order by "+Constant.OrderByLikesDesc+",addDate desc",
-			"</when>",
-			"<when test='orderBy==\""+Constant.OrderByScoreDesc+"\"'>",
-				"order by "+Constant.OrderByScoreDesc+",addDate desc",
-			"</when>",
-			"limit #{start},#{end}",
-		"</script>"
-	})
+
+    @Resource
+    private NewsDao newsDao;
+
+    public News addNews(News member){
+        return newsDao.save(member);
+    }
+
+    public News findNewsById(String id){
+        return newsDao.findNewsById(id);
+    }
+
+	/*News findById(News news);
+
+
 	List<News> list(News news);
-	
-	@Select({
-		"<script>",
-		"SELECT COUNT(*) FROM inspur.NEWS N ",
-		"LEFT JOIN INSPUR.NEWS_CATEGORY C ON N.CATEGORY = C.ID ",
-		"WHERE N.STATE = 1 ",
-			"<when test='title!=null'>",
-				"AND N.TITLE LIKE CONCAT('%',#{title},'%')",
-			"</when>",
-			"<when test='category!=0'>",
-				"AND category = #{category}",
-			"</when>",
-			"<when test='commendState!=0'>",
-				"AND commendState = #{commendState}",
-			"</when>",
-		"</script>"
-	})
+
+
 	int count(News news);
-	
-	@Insert("INSERT INTO `inspur`.`news` (`id`,`title`,`description`,`category`,`image`,`content`,`addDate`,`updateDate`,`commendState`,`state`,`browses`,`likes`,`comments`,`score`) VALUES (null,#{title},#{description},#{category},#{image},#{content},now(),now(),1,1,0,0,0,0);")
+
 	int insert(News news);
 
-	@Update("UPDATE `inspur`.`news` SET `title` = #{title}, `description` = #{description}, `category` = #{category}, `image` = #{image}, `content` = #{content}, `updateDate` = now()  WHERE `id` = #{id};")
 	int update(News news);
-	
-	@Update("UPDATE `inspur`.`news` SET `state` = #{state}, `commendState` = #{commendState}, `browses` = #{browses}, `likes` = #{likes}, `comments` = #{comments}, `score` = #{score} WHERE `id` = #{id};")
+
 	int updateState(News news);*/
 	
 }
