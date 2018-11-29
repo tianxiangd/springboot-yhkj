@@ -32,15 +32,7 @@ public class NewsCategoryController {
 	/*@Autowired
 	private NewsCategoryService newsCategoryService;
 	
-	*//**
-	 * 文章分类列表
-	 * @param newsCategory
-	 * @param pageCurrent
-	 * @param pageSize
-	 * @param pageCount
-	 * @param model
-	 * @return
-	 *//*
+	//文章分类列表
 	@RequestMapping("/admin/newsCategoryManage_{pageCurrent}_{pageSize}_{pageCount}")
 	public String newsCategoryManage(NewsCategory newsCategory,@PathVariable Integer pageCurrent,@PathVariable Integer pageSize,@PathVariable Integer pageCount, Model model) {
 		//判断
@@ -62,12 +54,7 @@ public class NewsCategoryController {
 		return "news/newsCategoryManage";
 	}
 	
-	*//**
-	 * 文章分类新增、修改跳转
-	 * @param model
-	 * @param newsCategory
-	 * @return
-	 *//*
+
 	@GetMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditGet(Model model,NewsCategory newsCategory) {
 		if(newsCategory.getId()!=0){
@@ -77,14 +64,8 @@ public class NewsCategoryController {
 		return "news/newsCategoryEdit";
 	}
 	
-	*//**
-	 * 文章分类新增、修改提交
-	 * @param model
-	 * @param newsCategory
-	 * @param imageFile
-	 * @param httpSession
-	 * @return
-	 *//*
+	//文章分类新增、修改提交
+
 	@PostMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditPost(Model model,NewsCategory newsCategory, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
 		for (MultipartFile file : imageFile) {

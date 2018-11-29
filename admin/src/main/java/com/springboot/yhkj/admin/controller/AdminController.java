@@ -36,8 +36,8 @@ public class AdminController {
 			Admin adminFromDB = optional.get();
 			adminFromDB.setPassword(admin.getPassword());
 			adminFromDB.setUsername(admin.getUsername());
-			//adminFromDB.setEmail(admin.getEmail());
-			//adminFromDB.setPhone(admin.getPhone());
+			adminFromDB.setEmail(admin.getEmail());
+			adminFromDB.setPhone(admin.getPhone());
 			adminDao.save(adminFromDB);
 			session.removeAttribute("admin");
 			session.setAttribute("admin", adminFromDB);

@@ -21,5 +21,12 @@ public class AdminApplication {
     public String home() {
         return "dashboard";
     }
+    
+    @RequestMapping("/dashboard")
+    public String dashboard() {
+        return "dashboard";
+    }
+
+
 
 }

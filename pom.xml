@@ -72,6 +72,12 @@
             <artifactId>nekohtml</artifactId>
             <version>1.9.22</version>
         </dependency>
+        <!--由于spring.jpa的hibernate版本问题导致LocalDate映射有问题所以这里使用该版本覆盖之前版本-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-java8</artifactId>
+            <version>5.1.2.Final</version>
+        </dependency>
         <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -87,12 +93,7 @@
             <version>1.4.7</version>
         </dependency>
 
-        <!--加入Spring Security依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>2.0.0.RELEASE</version>
-        </dependency>
+
         <!-- mybatis的分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>

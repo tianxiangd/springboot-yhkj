@@ -14,7 +14,7 @@ public class NewsCategoryService {
 	
 	/*@Select("SELECT * FROM `inspur`.`news_category` where id = #{id};")
 	NewsCategory findById(NewsCategory newsCategory);
-	
+
 	@Select({
 		"<script>",
 		"SELECT * FROM `inspur`.`news_category`",
@@ -26,7 +26,7 @@ public class NewsCategoryService {
 		"</script>"
 	})
 	List<NewsCategory> list(NewsCategory newsCategory);
-	
+
 	@Select({
 		"<script>",
 		"SELECT count(*) FROM `inspur`.`news_category`",
@@ -37,13 +37,13 @@ public class NewsCategoryService {
 		"</script>"
 	})
 	int count(NewsCategory newsCategory);
-	
+
 	@Insert("INSERT INTO `inspur`.`news_category` (`id`, `name`, `description`, `image`, `addDate`, `state`) VALUES (null, #{name}, #{description}, #{image}, now(), 1);")
 	int insert(NewsCategory newsCategory);
-	
+
 	@Update("UPDATE `inspur`.`news_category`SET `name` = #{name}, `description` = #{description}, `image` = #{image} WHERE `id` = #{id};")
 	int update(NewsCategory newsCategory);
-	
+
 	@Update("UPDATE `inspur`.`news_category`SET `state` = #{state} WHERE `id` = #{id};")
 	int updateState(NewsCategory newsCategory);*/
 }

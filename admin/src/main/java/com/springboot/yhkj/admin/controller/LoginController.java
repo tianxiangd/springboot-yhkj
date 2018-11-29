@@ -15,7 +15,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String getLoginView(HttpServletRequest request) {
         if (request.getSession().getAttribute("admin") != null)
-            return "index";
+            return "dashboard";
         return "login";
     }
 

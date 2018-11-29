@@ -72,12 +72,7 @@ public class NewsController {
 	}
 	
 	
-	*//**
-	 * 文章新增、修改跳转
-	 * @param model
-	 * @param newsCategory
-	 * @return
-	 *//*
+	//文章新增、修改跳转
 	@GetMapping("/admin/newsEdit")
 	public String newsEditGet(Model model,News news) {
 		NewsCategory newsCategory = new NewsCategory();
@@ -92,14 +87,7 @@ public class NewsController {
 		return "news/newsEdit";
 	}
 	
-	*//**
-	 * 文章新增、修改提交
-	 * @param model
-	 * @param newsCategory
-	 * @param imageFile
-	 * @param httpSession
-	 * @return
-	 *//*
+	//文章新增、修改提交
 	@PostMapping("/admin/newsEdit")
 	public String newsEditPost(Model model,News news, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
 		for (MultipartFile file : imageFile) {
