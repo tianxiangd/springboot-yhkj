@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import com.springboot.yhkj.admin.model.News;
@@ -33,6 +34,25 @@ import com.springboot.yhkj.admin.util.PageUtil;
 @Controller
 public class NewsController {
 
+    @Resource
+    private NewsService newsService;
+
+    @GetMapping("/deleteNews")
+    public String getDeleteNewsView() {
+        return "deleteNews";
+    }
+
+    @PostMapping("/deleteNews")
+    @ResponseBody
+    public String deleteNews(Integer id) {
+        try {
+            newsService.deleteNews(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
+        return "success";
+    }
 	/*@Autowired
 	private NewsService newsService;
 

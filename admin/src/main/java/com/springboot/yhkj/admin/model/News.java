@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class News extends BaseObject {
 
-	private long id;
+	private Integer id;
 	private String title;
 	private String description;
 	private long category;
@@ -70,11 +70,11 @@ public class News extends BaseObject {
 		this.categoryImage = categoryImage;
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
