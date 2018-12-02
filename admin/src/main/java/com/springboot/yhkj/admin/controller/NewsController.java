@@ -10,9 +10,13 @@ import java.util.Random;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-import com.springboot.yhkj.admin.model.News;
+import com.github.pagehelper.PageInfo;
+import com.springboot.yhkj.admin.model.*;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +28,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.yhkj.admin.model.News;
-import com.springboot.yhkj.admin.model.NewsCategory;
-import com.springboot.yhkj.admin.model.ResObject;
 import com.springboot.yhkj.admin.service.NewsCategoryService;
 import com.springboot.yhkj.admin.service.NewsService;
 import com.springboot.yhkj.admin.util.Constant;
@@ -53,10 +55,8 @@ public class NewsController {
         }
         return "success";
     }
-	/*@Autowired
-	private NewsService newsService;
 
-	@Autowired
+	@Resource
 	private NewsCategoryService newsCategoryService;
 	
 	
@@ -65,22 +65,24 @@ public class NewsController {
 		
 		//判断
 		if(pageSize == 0) pageSize = 10;
-		if(pageCurrent == 0) pageCurrent = 1;
-		int rows = newsService.count(news);
+		//由于Pageable是从0开始的 所以这里的页码做减1处理
+		if(pageCurrent > 0) pageCurrent -= 1;
+
+		List<News> newsListAll = newsService.findAll();
+		int rows = newsListAll.size();
 		if(pageCount == 0) pageCount = rows%pageSize == 0 ? (rows/pageSize) : (rows/pageSize) + 1;
-		
-		//查询
-		news.setStart((pageCurrent - 1)*pageSize);
-		news.setEnd(pageSize);
-		if(news.getOrderBy()==null){news.setOrderBy(Constant.OrderByAddDateDesc);}
-		List<News> newsList = newsService.list(news);
-		
+
+		//Pageable pageable = PageRequest.of(pageCurrent, pageSize);
+		Page<News> newsList= newsService.findAllNews(pageCurrent,pageSize);
+
+
+
 		//文章分类
 		NewsCategory newsCategory = new NewsCategory();
 		newsCategory.setStart(0);
 		newsCategory.setEnd(Integer.MAX_VALUE);
-		List<NewsCategory> newsCategoryList = newsCategoryService.list(newsCategory);
-		
+		List<NewsCategory> newsCategoryList = newsCategoryService.findAll();
+
 		//输出
 		model.addAttribute("newsCategoryList", newsCategoryList);
 		model.addAttribute("newsList", newsList);
@@ -98,10 +100,10 @@ public class NewsController {
 		NewsCategory newsCategory = new NewsCategory();
 		newsCategory.setStart(0);
 		newsCategory.setEnd(Integer.MAX_VALUE);
-		List<NewsCategory> newsCategoryList = newsCategoryService.list(newsCategory);
+		List<NewsCategory> newsCategoryList = newsCategoryService.findAll();
 		model.addAttribute("newsCategoryList",newsCategoryList);
 		if(news.getId()!=0){
-			News newT = newsService.findById(news);
+			News newT = newsService.findnewsByid(news.getId());
 			model.addAttribute("news",newT);
 		}
 		return "news/newsEdit";
@@ -130,9 +132,9 @@ public class NewsController {
 			}
 		}
 		if(news.getId()!=0){
-			newsService.update(news);
+			newsService.updateNews(news);
 		} else {
-			newsService.insert(news);
+			newsService.addNews(news);
 		}
 		return "redirect:newsManage_0_0_0";
 	}
@@ -140,7 +142,7 @@ public class NewsController {
 	@ResponseBody
 	@PostMapping("/admin/newsEditState")
 	public ResObject<Object> newsEditState(News news) {
-		News newsO = newsService.findById(news);
+		News newsO = newsService.findnewsByid(news.getId());
 		
 		if(news.getState()==0){
 			news.setState(newsO.getState());
@@ -160,9 +162,9 @@ public class NewsController {
 		if(news.getScore()==0){
 			news.setScore(newsO.getScore());
 		}
-		newsService.updateState(news);
+		newsService.updateNews(news);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, null, null);
 		return object;
-	}*/
+	}
 	
 }

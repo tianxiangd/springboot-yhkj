@@ -2,16 +2,51 @@ package com.springboot.yhkj.admin.service;
 
 import java.util.List;
 
+import com.springboot.yhkj.admin.dao.NewsCategoryDao;
+import com.springboot.yhkj.admin.model.News;
+import com.springboot.yhkj.admin.model.NewsCategory;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import com.springboot.yhkj.admin.model.NewsCategory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 @Service
 public class NewsCategoryService {
-	
+
+    @Resource
+    private NewsCategoryDao newsCategoryDao;
+
+    public List<NewsCategory> findAll(){
+        return newsCategoryDao.findAll();
+    }
+
+    public NewsCategory findById(NewsCategory newsCategory){
+        return newsCategoryDao.findNewsCategoryById(newsCategory.getId());
+    }
+    @Transactional
+    public void updateNewsCategory(NewsCategory newsCategory){
+        if (newsCategoryDao.findById(newsCategory.getId())!=null){
+            newsCategoryDao.save(newsCategory);
+            return;
+        }
+        throw new RuntimeException("news中不存在当前的id:"+newsCategory.getId());
+    }
+
+    public NewsCategory addNewsCategory(NewsCategory newsCategory){
+        //return newsCategoryDao.save(newsCategory);
+        return newsCategoryDao.save(newsCategory);
+    }
+
+    public void updateState(NewsCategory newsCategory){
+
+        newsCategoryDao.updateState(newsCategory.getId(),newsCategory.getState());
+    }
+
 	/*@Select("SELECT * FROM `inspur`.`news_category` where id = #{id};")
 	NewsCategory findById(NewsCategory newsCategory);
 

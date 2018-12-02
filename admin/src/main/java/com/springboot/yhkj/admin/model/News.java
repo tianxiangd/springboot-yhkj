@@ -1,56 +1,62 @@
 package com.springboot.yhkj.admin.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Date;
-
+@Entity
 public class News extends BaseObject {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String title;
 	private String description;
-	private long category;
+	private Integer category;
 	private String categoryName;
 	private String categoryImage;
 	private String image;
 	private String content;
 	private Date addDate;
 	private Date updateDate;
-	private int state;
-	private int commendState;
+	private Integer state;
+	private Integer commendState;
 
-	private int browses;
-	private int likes;
-	private int comments;
-	private int score;
+	private Integer browses;
+	private Integer likes;
+	private Integer comments;
+	private Integer score;
 
-	public int getBrowses() {
+	public Integer getBrowses() {
 		return browses;
 	}
 
-	public void setBrowses(int browses) {
+	public void setBrowses(Integer browses) {
 		this.browses = browses;
 	}
 
-	public int getLikes() {
+	public Integer getLikes() {
 		return likes;
 	}
 
-	public void setLikes(int likes) {
+	public void setLikes(Integer likes) {
 		this.likes = likes;
 	}
 
-	public int getComments() {
+	public Integer getComments() {
 		return comments;
 	}
 
-	public void setComments(int comments) {
+	public void setComments(Integer comments) {
 		this.comments = comments;
 	}
 
-	public int getScore() {
+	public Integer getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(Integer score) {
 		this.score = score;
 	}
 
@@ -94,11 +100,11 @@ public class News extends BaseObject {
 		this.description = description;
 	}
 
-	public long getCategory() {
+	public Integer getCategory() {
 		return category;
 	}
 
-	public void setCategory(long category) {
+	public void setCategory(Integer category) {
 		this.category = category;
 	}
 
@@ -134,19 +140,19 @@ public class News extends BaseObject {
 		this.updateDate = updateDate;
 	}
 
-	public int getCommendState() {
+	public Integer getCommendState() {
 		return commendState;
 	}
 
-	public void setCommendState(int commendState) {
+	public void setCommendState(Integer commendState) {
 		this.commendState = commendState;
 	}
 
-	public int getState() {
+	public Integer getState() {
 		return state;
 	}
 
-	public void setState(int state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 

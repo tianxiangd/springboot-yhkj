@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>新增用户</title>
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection"/>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+    <!-- Toastr style -->
+    <link th:href="@{/css/plugins/toastr/toastr.min.css}" rel="stylesheet"/>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <!-- summernote style -->
+    <link th:href="@{/css/plugins/summernote/summernote.css}" rel="stylesheet" />
+    <link th:href="@{/css/plugins/summernote/summernote-bs3.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="border-bottom" th:include="header :: headerTop"></div>
+        <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
+            <div class="col-lg-10">
+                <h2>用户管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a>用户管理</a>
+                    </li>
+
+                    <li class="active">
+                        <strong>添加用户</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>添加用户</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="card">
+                                <div class="card-content">
+                                    <form th:action="@{/addUser}" method="post" enctype="multipart/form-data" id="addUser">
+                                        <div class="file-field input-field">
+                                            <div class="btn">
+                                                <span>选择头像文件</span>
+                                                <input id="file" type="file" name="icon" multiple="" placeholder="选择文件" accept="image/*" onchange="changeToop()">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <!--<input class="file-path validate" type="text" placeholder="Upload one or more files">-->
+                                                <img id="myimg" src="img/icon/common.jpg" class="img-responsive img-thumbnail" style="width: 20%;height: 20%" />
+                                            </div>
+                                            <!--头像文件上传预览-->
+                                            <script>
+                                                function Id(id){
+                                                    return document.getElementById(id);
+                                                }
+                                                function changeToop(){
+                                                    var file = Id("file");
+                                                    if(file.value===''){
+                                                        //设置默认图片
+                                                        Id("myimg").src='img/icon/common.jpg';
+                                                    }else{
+                                                        preImg("file","myimg");
+                                                    }
+                                                }
+                                                //获取input[file]图片的url Important
+                                                function getFileUrl(fileId) {
+                                                    var url;
+                                                    var file = Id(fileId);
+                                                    var agent = navigator.userAgent;
+                                                    if (agent.indexOf("MSIE")>=1) {
+                                                        url = file.value;
+                                                    } else if(agent.indexOf("Firefox")>0) {
+                                                        url = window.URL.createObjectURL(file.files.item(0));
+                                                    } else if(agent.indexOf("Chrome")>0) {
+                                                        url = window.URL.createObjectURL(file.files.item(0));
+                                                    }
+                                                    return url;
+                                                }
+                                                //读取图片后预览
+                                                function preImg(fileId,imgId) {
+                                                    var imgPre =Id(imgId);
+                                                    imgPre.src = getFileUrl(fileId);
+                                                }
+                                            </script>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input placeholder="用户名" id="memberName" type="text" class="validate" name="userName" required/>
+                                                <label for="memberName"></label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="phone" name="phone" type="tel" class="validate" placeholder="联系电话" required/>
+                                                <label for="phone"></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input placeholder="会员密码" id="password" type="password" class="validate" name="password" onchange="confirmPassword()" required/>
+                                                <label for="password"></label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="confirm" type="password" class="validate" placeholder="确认密码" onchange="confirmPassword()" required/>
+                                                <label for="confirm"></label>
+                                            </div>
+                                            <script>
+
+                                                function confirmPassword(){
+                                                    var password = document.getElementById('password');
+                                                    var password2 = document.getElementById('confirm');
+
+                                                    if (password2.value === '')
+                                                        return;
+                                                    if (password.value === ''){
+                                                        alert('密码不能为空');
+                                                        return false;
+                                                    }
+
+                                                    if (password.value !== password2.value){
+                                                        password2.setAttribute('class', 'invalid');
+                                                        alert('密码不一致！！');
+                                                        return false;
+                                                    }
+                                                    password2.setAttribute('class', 'valid');
+                                                    return true;
+                                                }
+                                            </script>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="email" name="email" type="email" class="validate" placeholder="邮箱" required/>
+                                                <label for="email"></label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                性别：
+                                                <input name="sex" type="radio" id="man" value="男" checked />
+                                                <label for="man">男</label>
+                                                <input name="sex" type="radio" id="woman" value="女" />
+                                                <label for="woman">女</label>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <input id="birthday" name="birthday" type="date" class="validate" placeholder="会员生日" required/>
+                                            <label for="birthday"></label>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="input-field col s2">
+                                                会员等级：
+                                            </div>
+                                            <div class="col s10">
+                                                <label style="display: none" for="inputState">State</label>
+                                                <select id="inputState" class="form-control" name="gradeName" required>
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <button onclick="submitForm()" class="waves-effect waves-light btn" type="button">添加</button>
+                                        <button class="waves-effect waves-light btn" type="reset">重置数据</button>
+
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer" th:include="footer :: copyright"></div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery-2.1.1.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Peity -->
+<script th:src="@{/js/plugins/peity/jquery.peity.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script th:src="@{/js/inspinia.js}"></script>
+<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+
+<!-- Toastr script -->
+<script th:src="@{/js/plugins/toastr/toastr.min.js}"></script>
+
+<!-- common -->
+<script th:src="@{/js/common.js}"></script>
+
+<!-- SUMMERNOTE -->
+<script th:src="@{/js/plugins/summernote/summernote.min.js}"></script>
+
+
+<script>
+    $(function () {
+
+        $.ajax({
+            type: "get",
+            url: '/getGrade',
+            dataTyp:'json',
+            success: function (data) {
+                var inputState = $('#inputState');
+                inputState.html('');
+                $.each( data, function(index, content)
+                {
+                    inputState.html(inputState.html() +"<option id='"+content.id+"'>"+content.gradeName+"</option>");
+                });
+            }
+        });
+    });
+
+    function submitForm() {
+        if (confirmPassword())
+            $('#addUser').submit();
+    }
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

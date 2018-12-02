@@ -2,6 +2,7 @@ package com.springboot.yhkj.admin.service;
 
 import java.util.List;
 
+import com.github.pagehelper.PageHelper;
 import com.springboot.yhkj.admin.dao.AdminDao;
 import com.springboot.yhkj.admin.dao.NewsDao;
 import org.apache.ibatis.annotations.Insert;
@@ -27,15 +28,20 @@ public class NewsService {
     private NewsDao newsDao;
 
 
-    public Page<News> findAllNews(Integer currentPage){
+    public Page<News> findAllNews(Integer currentPage,Integer pageSize){
         if (currentPage == null){
-            currentPage = 1;
+            currentPage = 0;
         }
-        Pageable pageable = new PageRequest(currentPage, 3, Sort.Direction.ASC, "id");
+        Pageable pageable = new PageRequest(currentPage, pageSize, Sort.Direction.ASC, "id");
         return newsDao.findAll(pageable);
     }
+
     public News addNews(News news){
         return newsDao.save(news);
+    }
+    public News findnewsByid(Integer id){return newsDao.findNewsById(id);}
+    public List<News> findAll(){
+        return newsDao.findAll();
     }
     public void deleteNews(Integer newsId){
 
@@ -48,7 +54,7 @@ public class NewsService {
             newsDao.save(news);
             return;
         }
-        throw new RuntimeException("MemberGrade中不存在当前的id:"+news.getId());
+        throw new RuntimeException("news中不存在当前的id:"+news.getId());
     }
 
 

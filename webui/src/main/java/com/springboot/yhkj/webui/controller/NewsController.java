@@ -44,6 +44,7 @@ public class NewsController {
         newsList.add(new News(3, "巴扎黑3", "2018-1-1",100,"qw"));
         newsList.add(new News(4, "巴扎黑4", "2018-1-1",100,"qq"));
         newsList.add(new News(5, "巴扎黑5", "2018-1-1",100,"qq"));*/
+
         List<News> newsList = newsService.findAll();
         // 保存数据到request作用范围域
         webRequest.setAttribute("newsList", newsList, RequestAttributes.SCOPE_REQUEST);

@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>管理员管理</title>
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection"/>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+    <!-- Toastr style -->
+    <link th:href="@{/css/plugins/toastr/toastr.min.css}" rel="stylesheet"/>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <!-- summernote style -->
+    <link th:href="@{/css/plugins/summernote/summernote.css}" rel="stylesheet" />
+    <link th:href="@{/css/plugins/summernote/summernote-bs3.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="border-bottom" th:include="header :: headerTop"></div>
+        <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
+            <div class="col-lg-10">
+                <h2><a th:href="@{/myAccount}">管理员基本信息修改</a><span> / </span><a th:href="@{/addAdmin}">添加管理员</a><span> / </span><a th:href="@{/deleteAdmin}"> 删除管理员</a></h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a>管理员管理</a>
+                    </li>
+
+                    <li class="active">
+                        <strong>管理员信息</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>管理员信息修改</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <!--自定义内容-->
+                            <div class="card">
+                                <div class="card-content">
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <span>用户名：</span>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="username" name="username" type="text" th:value="${session.admin.username}" class="validate valid" placeholder="用户名" required/>
+                                            <label for="username" class="active">用户名</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <span>密码：</span>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="password" name="password" type="text" th:value="${session.admin.username}" class="validate valid" placeholder="密码" required/>
+                                            <label for="password" class="active">密码</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <span>邮箱：</span>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="email" name="email" type="text" th:value="${session.admin.email}" class="validate valid" placeholder="邮箱" required/>
+                                            <label for="email" class="active">邮箱</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <span>联系电话：</span>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="phone" name="phone" type="text" th:value="${session.admin.phone}" class="validate valid" placeholder="电话" required/>
+                                            <label for="phone" class="active">电话</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-action">
+                                    <a href="javascript:void(0)" onclick="modify()">修改</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer" th:include="footer :: copyright"></div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery-2.1.1.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Peity -->
+<script th:src="@{/js/plugins/peity/jquery.peity.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script th:src="@{/js/inspinia.js}"></script>
+<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+
+<!-- Toastr script -->
+<script th:src="@{/js/plugins/toastr/toastr.min.js}"></script>
+
+<!-- common -->
+<script th:src="@{/js/common.js}"></script>
+
+<script>
+
+    function modify() {
+        var email = document.getElementById('email').value;
+        var username = document.getElementById('username').value;
+        var phone = document.getElementById('phone').value;
+        var password = document.getElementById('password').value;
+        if (confirm('确认修改？')) {
+            $.ajax({
+                url: '/modifyAdmin',
+                type: 'POST',
+                data:{email:email,password:password,username:username, phone:phone},
+                success: function (data) {
+                    alert(data);
+                }
+
+            })
+        }
+    }
+
+</script>
+</body>
+
+</html>

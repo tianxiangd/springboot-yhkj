@@ -1,33 +1,56 @@
 package com.springboot.yhkj.admin.model;
 
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
+@Entity
 public class User {
 
-	private long id;
+	@Id
+	private String id;
+	private String iconPath;
 	private String userName;
 	private String password;
-	private String realName;
-	private int age;
-	private String phoneNumber;
-	private String headPicture;
-	private Date addDate;
-	private Date updateDate;
-	private int state;
+	private String phone;
+	private LocalDate birthday;
+	private String sex;
+	//会员等级
+	@ManyToOne
+	private UserGrade userGrade;
+	//会员积分
+	private Long userIntegral;
+	//会员余额
+	private Float balance;
+	//会员状态 挂失、停用、正常
+	private String state;
+	private String email;
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", realName=" + realName
-				+ ", age=" + age + ", phoneNumber=" + phoneNumber + ", headPicture=" + headPicture + ", addDate="
-				+ addDate + ", updateDate=" + updateDate + ", state=" + state + "]";
+
+	public String getEmail() {
+		return email;
 	}
 
-	public long getId() {
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getIconPath() {
+		return iconPath;
+	}
+
+	public void setIconPath(String iconPath) {
+		this.iconPath = iconPath;
 	}
 
 	public String getUserName() {
@@ -46,60 +69,80 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRealName() {
-		return realName;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setRealName(String realName) {
-		this.realName = realName;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public int getAge() {
-		return age;
+	public String getBirthday() {
+		return birthday.toString();
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setBirthday(String birthday) {
+		this.birthday = LocalDate.parse(birthday);
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
-	public String getHeadPicture() {
-		return headPicture;
+	public UserGrade getUserGrade() {
+		return userGrade;
 	}
 
-	public void setHeadPicture(String headPicture) {
-		this.headPicture = headPicture;
+	public void setUserGrade(UserGrade  userGrade) {
+		this.userGrade = userGrade;
 	}
 
-	public Date getAddDate() {
-		return addDate;
+	public Long getUserIntegral() {
+		return userIntegral;
 	}
 
-	public void setAddDate(Date addDate) {
-		this.addDate = addDate;
+	public void setUserIntegral(Long userIntegral) {
+		this.userIntegral = userIntegral;
 	}
 
-	public Date getUpdateDate() {
-		return updateDate;
+	public Float getBalance() {
+		return balance;
 	}
 
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
+	public void setBalance(Float balance) {
+		this.balance = balance;
 	}
 
-	public int getState() {
+	public String getState() {
 		return state;
 	}
 
-	public void setState(int state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 
+	public LocalDate getLocalDate(){
+		return this.birthday;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id='" + id + '\'' +
+				", iconPath='" + iconPath + '\'' +
+				", memberName='" + userName + '\'' +
+				", password='" + password + '\'' +
+				", phone='" + phone + '\'' +
+				", birthday=" + birthday +
+				", sex='" + sex + '\'' +
+				", memberGrade=" + userGrade +
+				", memberIntegral=" + userIntegral +
+				", balance=" + balance +
+				", state='" + state + '\'' +
+				'}';
+	}
 }

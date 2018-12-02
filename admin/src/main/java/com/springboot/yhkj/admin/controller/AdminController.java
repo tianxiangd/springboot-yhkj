@@ -48,17 +48,17 @@ public class AdminController {
 
 	@GetMapping("/addAdmin")
 	public String getAddAdminView(){
-		return "addAdmin";
+		return "admin/addAdmin";
 	}
 
 	@GetMapping("/deleteAdmin")
 	public String getDeleteView(){
-		return "deleteAdmin";
+		return "admin/deleteAdmin";
 	}
 
 	@GetMapping("/myAccount")
 	public String getAccountView(){
-		return "modifyAdmin";
+		return "admin/modifyAdmin";
 	}
 
 	@GetMapping("/logout")

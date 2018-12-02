@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>新增用户</title>
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection"/>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+    <!-- Toastr style -->
+    <link th:href="@{/css/plugins/toastr/toastr.min.css}" rel="stylesheet"/>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <!-- summernote style -->
+    <link th:href="@{/css/plugins/summernote/summernote.css}" rel="stylesheet" />
+    <link th:href="@{/css/plugins/summernote/summernote-bs3.css}" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="border-bottom" th:include="header :: headerTop"></div>
+        <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
+            <div class="col-lg-10">
+                <h2>用户管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a>用户管理</a>
+                    </li>
+                    <li>
+                        <a>添加用户</a>
+                    </li>
+                    <li class="active">
+                        <strong>添加用户成功</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>添加用户成功</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="card">
+                                <div class="card-content">
+
+
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <img id="myimg" th:src="${user.iconPath}" class="img-responsive img-thumbnail"/>
+                                        </div>
+                                        <div class="col s6">
+                                            <p>用户名：<span class="blue-text text-darken-2" th:text="${user.userName}"></span></p>
+                                            <p>联系电话：<span class="blue-text text-darken-2" th:text="${user.phone}"></span></p>
+                                            <p>邮箱：<span class="blue-text text-darken-2" th:text="${user.email}"></span></p>
+                                            <p>性别：<span class="blue-text text-darken-2" th:text="${user.sex}"></span></p>
+                                            <p>会员生日：<span class="blue-text text-darken-2" th:text="${user.birthday}"></span></p>
+                                            <p>会员等级：<span class="blue-text text-darken-2" th:text="${user.userGrade.gradeName}"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+
+                                </div>
+                                <!--</div>-->
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer" th:include="footer :: copyright"></div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
