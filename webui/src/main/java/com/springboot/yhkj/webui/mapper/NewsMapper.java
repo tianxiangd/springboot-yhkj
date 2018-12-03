@@ -21,6 +21,7 @@ public interface NewsMapper {
             @Result(property = "title", column = "title")
     })
     List<News> doSelect(@Param("news") News news);
-
+    @Select("select title,content from News where id= #{id}")
+    News  findNewsById(@Param("id") int id);
 
 }

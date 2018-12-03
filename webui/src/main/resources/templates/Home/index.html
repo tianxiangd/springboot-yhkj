@@ -393,41 +393,16 @@
 <div id="info_dis" class="clearfix">
     <div class="info fl">
         <div class="data_heading">
-            <a href="#" class="fr more">MORE+</a>
-            <a href="#" class="title">图书</a>
+            <a href="/news/index" class="fr more">MORE+</a>
+            <a href="/news/index" class="title">资讯</a>
         </div>
         <div class="data_body">
             <div class="data_body_info">
                 <div class="info_img_list clearfix">
-                    <div class="info_img fl">
-                        <a href="#"><img th:src="@{/images/info-img-1.png}" alt=""/></a>
-                        <div class="slide_mask">
-                            <div class="slide_mask_bg"></div>
-                            <div class="slide_mask_text">
-                                <a href="#">航天技术第一时间助力四川、新疆抗震救灾</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info_img fl">
-                        <a href="#"><img th:src="@{/images/info-img-2.png}" alt=""/></a>
-                        <div class="slide_mask">
-                            <div class="slide_mask_bg"></div>
-                            <div class="slide_mask_text">
-                                <a href="#">长征七号火箭奔赴海南 天舟一号任务一号任</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <ul class="info_list">
-                    <li>
-                        <span class="fr">2017.05.22</span><i></i><a href="#">中国运载火箭技术研究院</a>
-                    </li>
-                    <li>
-                        <span class="fr">2017.05.22</span><i></i><a href="#">首批30卷《中国航天院士传记丛书》正式发布</a>
-                    </li>
-                    <li>
-                        <span class="fr">2017.05.22</span><i></i><a href="#">中国航天高峰论坛召开 聚焦创新发展</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -492,7 +467,8 @@
 <!--footer-->
 <div th:replace="Fragments/footer :: footer">...</div>
 
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/base.js"></script>
+<script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+<script th:src="@{/js/base.js}"></script>
+<script th:src="@{/js/index.js}"></script>
 </body>
 </html>

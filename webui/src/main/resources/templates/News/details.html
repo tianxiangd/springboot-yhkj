@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻详情</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link th:href="@{/css/zixunindex.css}" rel="stylesheet" />
+    <link th:href="@{/css/news_detail.css}" rel="stylesheet" />
+</head>
+<body>
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<div id="bwrap">
+    <div class="breadnav">
+        <a th:href="@{/home/index}">首页</a>><a th:href="@{/news/index}">资讯</a>><span></span>
+    </div>
+    <div class="zxcon1">
+        <h4 th:text="${News.title}"></h4>
+        <h5>
+            <span ></span>
+
+        </h5>
+        <div id="newsContent" th:utext="${News.content}"></div>
+        <p>
+
+        </p>
+
+
+        <div class="zxlink">
+            <dl>
+                <dt>相关资讯：</dt>
+                <dd><a href="/News/Detail?doi=@item.Doi"></a></dd>
+
+            </dl>
+            <dl id="relevantbca"></dl>
+        </div><!--zxlink-->
+
+    </div><!--zxcon1-->
+</div><!--bwrap-->
+<div class="clear"></div>
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+
+</body>
+</html>

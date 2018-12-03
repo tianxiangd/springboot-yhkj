@@ -6,6 +6,7 @@ import com.springboot.yhkj.webui.mapper.NewsMapper;
 
 import com.springboot.yhkj.webui.pojo.News;
 
+import org.hibernate.engine.jdbc.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +27,7 @@ public class NewsService {
         return newsMapper.doSelect(news);
     }
 
+    public News findNewsById(int id) {
+        return newsMapper.findNewsById(id);
+    }
 }

@@ -6,9 +6,7 @@ import com.springboot.yhkj.webui.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.WebRequest;
 
@@ -60,4 +58,19 @@ public class NewsController {
         return "news/list";
     }
 
+    @RequestMapping(value = "news/details",method= RequestMethod.GET)
+    public String getNewsDetails(@RequestParam("id") int id, ModelMap map) {
+        News news =newsService.findNewsById(id);
+        map.addAttribute("News", news);
+        return "news/details";
+    }
+
+    @PostMapping("news/queryIndexNews")
+    @ResponseBody
+    public List<News> queryIndexNews() {
+        News news= new News();
+        news.setPageNum(1);
+        news.setPageSize(5);
+        return newsService.search(news);
+    }
 }
