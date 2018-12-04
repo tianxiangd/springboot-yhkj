@@ -102,10 +102,15 @@ public class NewsController {
 		newsCategory.setEnd(Integer.MAX_VALUE);
 		List<NewsCategory> newsCategoryList = newsCategoryService.findAll();
 		model.addAttribute("newsCategoryList",newsCategoryList);
-		if(news.getId()!=0){
-			News newT = newsService.findnewsByid(news.getId());
-			model.addAttribute("news",newT);
+		try {
+			if(news.getId()!=0){
+				News newT = newsService.findnewsByid(news.getId());
+				model.addAttribute("news",newT);
+			}
+		}catch (Exception e){
+			e.printStackTrace();
 		}
+
 		return "news/newsEdit";
 	}
 	

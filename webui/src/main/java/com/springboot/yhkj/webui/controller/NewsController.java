@@ -3,6 +3,7 @@ import com.github.pagehelper.PageInfo;
 import com.springboot.yhkj.webui.pojo.News;
 import com.springboot.yhkj.webui.service.NewsService;
 
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -64,6 +65,7 @@ public class NewsController {
         map.addAttribute("News", news);
         return "news/details";
     }
+
 
     @PostMapping("news/queryIndexNews")
     @ResponseBody
