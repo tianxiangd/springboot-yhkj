@@ -3,17 +3,23 @@ package com.springboot.yhkj.admin.controller;
 import com.springboot.yhkj.admin.model.Book;
 import com.springboot.yhkj.admin.service.BookService;
 import com.springboot.yhkj.admin.util.PageUtil;
-import org.apache.commons.io.FileUtils;
+
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ClassUtils;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -102,21 +108,59 @@ public class BookController {
                 Date date = new Date();
                 String strDate = sdf.format(date);
                 String fileName = strDate + "_" + random.nextInt(1000) + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf("."),file.getOriginalFilename().length());
-                String realPath = httpSession.getServletContext().getRealPath("/userfiles");
-                System.out.println("realPath : "+realPath);
-                try {
+                //String realPath = httpSession.getServletContext().getRealPath("/userfiles");
+                //System.out.println("realPath : "+realPath);
+                String path=ClassUtils.getDefaultClassLoader().getResource("").getPath();
+                File pathf= new File(path);
+
+
+                //如果上传目录为/static/images/upload/，则可以如下获取：
+                File upload = new File(pathf.getAbsolutePath(),"static/images/upload/");
+                if(!upload.exists()) upload.mkdirs();
+
+                /*try {
                     FileUtils.copyInputStreamToFile(file.getInputStream(),new File(realPath, fileName));
                     book.setCoverpath("/userfiles/"+fileName);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }*/
+                //File upload = new File(realPath);
+                //if(!upload.exists()) upload.mkdirs();
+
+                try {
+                    // Get the file and save it somewhere
+                    byte[] bytes = file.getBytes();
+                    Path pathimg = Paths.get(upload.getAbsolutePath() +"/"+ fileName);
+                    Files.write(pathimg, bytes);
+                    book.setCoverpath("/images/upload/"+fileName);
+
+                  /*  SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+                    System.out.println();// new Date()为获取当前系统时间*/
+                    //使用Date
+                    Date d = new Date();
+                    SimpleDateFormat sdfaddDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+
+			/*redirectAttributes.addFlashAttribute("message",
+					"You successfully uploaded '" + file.getOriginalFilename() + "'");*/
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-        if(book.getId()!=0){
-            bookService.updateBook(book);
-        } else {
+        try {
+            if(book.getId()!=0){
+                bookService.updateBook(book);
+            } else {
+                bookService.addBook(book);
+            }
+        }catch (Exception e){
             bookService.addBook(book);
+            e.printStackTrace();
+
         }
+
         return "redirect:bookManage_0_0_0";
     }
 

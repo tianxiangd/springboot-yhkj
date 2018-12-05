@@ -22,6 +22,16 @@ public class Book {
     private String digest;
     private String filepath;
 
+    public Date getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
+    }
+
+    private Date addDate;
+
     public Integer getId() {
         return id;
     }

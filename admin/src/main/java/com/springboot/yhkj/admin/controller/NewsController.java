@@ -2,6 +2,9 @@ package com.springboot.yhkj.admin.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -12,13 +15,13 @@ import javax.servlet.http.HttpSession;
 
 import com.github.pagehelper.PageInfo;
 import com.springboot.yhkj.admin.model.*;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -113,7 +116,7 @@ public class NewsController {
 
 		return "news/newsEdit";
 	}
-	
+
 	//文章新增、修改提交
 	@PostMapping("/admin/newsEdit")
 	public String newsEditPost(Model model,News news, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
@@ -126,21 +129,57 @@ public class NewsController {
 				Date date = new Date();
 				String strDate = sdf.format(date);
 				String fileName = strDate + "_" + random.nextInt(1000) + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf("."),file.getOriginalFilename().length());
-				String realPath = httpSession.getServletContext().getRealPath("/userfiles");
-				System.out.println("realPath : "+realPath);
-				try {
+				//String realPath = httpSession.getServletContext().getRealPath("/userfiles");
+				//System.out.println("realPath : "+realPath);
+				/*try {
 					FileUtils.copyInputStreamToFile(file.getInputStream(),new File(realPath, fileName));
 					news.setImage("/userfiles/"+fileName);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}*/
+				String path=ClassUtils.getDefaultClassLoader().getResource("").getPath();
+				File pathf= new File(path);
+
+
+				//如果上传目录为/static/images/upload/，则可以如下获取：
+				File upload = new File(pathf.getAbsolutePath(),"static/images/upload/");
+				if(!upload.exists()) upload.mkdirs();
+
+				try {
+					// Get the file and save it somewhere
+					byte[] bytes = file.getBytes();
+ 					Path pathimg = Paths.get(upload.getAbsolutePath() + fileName);
+					Files.write(pathimg, bytes);
+					news.setImage("/images/upload/"+fileName);
+
+			/*redirectAttributes.addFlashAttribute("message",
+					"You successfully uploaded '" + file.getOriginalFilename() + "'");*/
+
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		if(news.getId()!=0){
-			newsService.updateNews(news);
-		} else {
+		try{
+
+			news.setBrowses(0);
+			news.setComments(0);
+			news.setLikes(0);
+			news.setScore(0);
+			news.setState(0);
+			news.setAddDate(new Date());
+			news.setUpdateDate(new Date());
+			if(news.getId()!=0){
+				newsService.updateNews(news);
+			} else {
+				newsService.addNews(news);
+			}
+		}catch (Exception e){
 			newsService.addNews(news);
+			e.printStackTrace();
 		}
+
+
 		return "redirect:newsManage_0_0_0";
 	}
 	

@@ -2,6 +2,9 @@ package com.springboot.yhkj.admin.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -9,7 +12,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.io.FileUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -80,9 +83,24 @@ public class NewsCategoryController {
                         file.getOriginalFilename().length());
                 String realPath = httpSession.getServletContext().getRealPath("/userfiles");
                 System.out.println("realPath : "+realPath);
-                try {
+               /* try {
                     FileUtils.copyInputStreamToFile(file.getInputStream(),new File(realPath, fileName));
                     newsCategory.setImage("/userfiles/"+fileName);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }*/
+                File upload = new File(realPath);
+                if(!upload.exists()) upload.mkdirs();
+
+                try {
+                    // Get the file and save it somewhere
+                    byte[] bytes = file.getBytes();
+                    Path pathimg = Paths.get(realPath + fileName);
+                    Files.write(pathimg, bytes);
+
+			/*redirectAttributes.addFlashAttribute("message",
+					"You successfully uploaded '" + file.getOriginalFilename() + "'");*/
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

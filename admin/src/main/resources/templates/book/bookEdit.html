@@ -6,7 +6,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>资讯编辑</title>
+<title>图书编辑</title>
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
@@ -81,7 +81,7 @@
                                 
                                 <div class="form-group"><label class="col-sm-2 control-label">描述：</label>
                                     <div class="col-sm-10">
-                                    	<textarea id="description" name="description" class="form-control" rows="2" th:text="${book.digest}"></textarea>
+                                    	<textarea id="digest" name="digest" class="form-control" rows="2" th:text="${book.digest}"></textarea>
                                     </div>
                                 </div>
                                 
@@ -89,7 +89,7 @@
                                 
                                 <div id="imageCell" class="form-group"><label class="col-sm-2 control-label">图片：</label>
                                     <div class="col-sm-10">
-                                    	<img  th:src="@{${book.coverpath}}" />
+                                    	<img  th:src="${book.coverpath}" />
                                     	<button id="imageCellBut" type="button" class="btn btn-white btn-sm">&nbsp;&nbsp;&nbsp;&nbsp;修改&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
     <script th:src="@{/js/plugins/summernote/summernote.min.js}"></script>
     
     <script th:inline="javascript">
-        var image = [[${news.image}]];
+        var image = [[${book.coverpath}]];
 		$(document).ready(function () {
 			if(image==null || image==""){
 				$("#imageCell").hide();
@@ -165,37 +165,15 @@
     </script>
     
     <script th:inline="javascript">
-    	var content = [[${news.content}]];
+
 		$(document).ready(function () {
-			//初始化编辑器
-			$('#summernote').summernote({
-			    height: 300,
-			    codemirror: {
-			      mode: 'text/html',
-			      htmlMode: true,
-			      lineNumbers: true,
-			      theme: 'monokai'
-			    }
-			});
-			//编辑器赋值
-			$('#summernote').code(content);
-			
+
 			//提交
 			$("#submitButton").click(function(){
 				if($("#title").val() == ""){
-					toastr.error('请输入文章标题','提示');
+					toastr.error('请输入图书标题','提示');
 					return;
 				}
-				if($("#category").val() == 0){
-					toastr.error('请选择文章分类','提示');
-					return;
-				}
-				var markupStr =  $('#summernote').code();
-				if(markupStr == ""){
-					toastr.error('请填写文章内容','提示');
-					return;
-				}
-				$("#content").val(markupStr);
 				$("#formTag").submit();
 			});
 		});

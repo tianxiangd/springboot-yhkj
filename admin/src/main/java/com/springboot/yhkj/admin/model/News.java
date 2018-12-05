@@ -1,80 +1,19 @@
 package com.springboot.yhkj.admin.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Date;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.mapping.Value;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import javax.persistence.*;
+import java.util.Date;
+
 @Entity
 public class News extends BaseObject {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String title;
-	private String description;
-	private Integer category;
-	private String categoryName;
-	private String categoryImage;
-	private String image;
-	private String content;
-	private Date addDate;
-	private Date updateDate;
-	private Integer state;
-	private Integer commendState;
-
-	private Integer browses;
-	private Integer likes;
-	private Integer comments;
-	private Integer score;
-
-	public Integer getBrowses() {
-		return browses;
-	}
-
-	public void setBrowses(Integer browses) {
-		this.browses = browses;
-	}
-
-	public Integer getLikes() {
-		return likes;
-	}
-
-	public void setLikes(Integer likes) {
-		this.likes = likes;
-	}
-
-	public Integer getComments() {
-		return comments;
-	}
-
-	public void setComments(Integer comments) {
-		this.comments = comments;
-	}
-
-	public Integer getScore() {
-		return score;
-	}
-
-	public void setScore(Integer score) {
-		this.score = score;
-	}
-
-	public String getCategoryName() {
-		return categoryName;
-	}
-
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
-	}
-
-	public String getCategoryImage() {
-		return categoryImage;
-	}
-
-	public void setCategoryImage(String categoryImage) {
-		this.categoryImage = categoryImage;
-	}
 
 	public Integer getId() {
 		return id;
@@ -108,6 +47,8 @@ public class News extends BaseObject {
 		this.category = category;
 	}
 
+
+
 	public String getImage() {
 		return image;
 	}
@@ -140,6 +81,14 @@ public class News extends BaseObject {
 		this.updateDate = updateDate;
 	}
 
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
 	public Integer getCommendState() {
 		return commendState;
 	}
@@ -148,12 +97,60 @@ public class News extends BaseObject {
 		this.commendState = commendState;
 	}
 
-	public Integer getState() {
-		return state;
+	public Integer getBrowses() {
+		return browses;
 	}
 
-	public void setState(Integer state) {
-		this.state = state;
+	public void setBrowses(Integer browses) {
+		this.browses = browses;
 	}
+
+	public Integer getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Integer likes) {
+		this.likes = likes;
+	}
+
+	public Integer getComments() {
+		return comments;
+	}
+
+	public void setComments(Integer comments) {
+		this.comments = comments;
+	}
+
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+	private String title;
+	private String description;
+	private Integer category;
+
+	private String image;
+	private String content;
+	private Date addDate;
+	private Date updateDate;
+
+	private Integer state;
+
+	private Integer commendState;
+
+
+	private Integer browses;
+
+	private Integer likes;
+
+	private Integer comments;
+
+	private Integer score;
+
+
 
 }

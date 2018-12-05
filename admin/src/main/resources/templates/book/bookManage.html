@@ -84,9 +84,9 @@
 		                                    <tr>
 		                                    	<th width="5%">ID</th>
 		                                        <th width="40%">标题 </th>
-		                                        <th width="15%">分类</th>
-		                                        <th width="15%">添加时间</th>
-		                                        <th width="10%">推荐状态</th>
+		                                        <th width="15%">图书摘要</th>
+		                                        <th width="15%">封面</th>
+
 		                                        <th>操作</th>
 		                                    </tr>
 	                                    </thead>
@@ -95,7 +95,7 @@
 										   		<td th:text="${book.id}">Onions</td>
 										      	<td th:text="${book.title}">Onions</td>
 										      	<td th:text="${book.digest}">Onions</td>
-										      	<td th:text="${book.coverpath}">Onions</td>
+												<td><image th:width="100" th:height="100" th:src="${book.coverpath}"></image></td>
 
 										      	<td>
 										      		<a th:href="@{'bookEdit?id='+${book.id}}" title="修改"><i class="fa fa-edit text-navy"></i></a>

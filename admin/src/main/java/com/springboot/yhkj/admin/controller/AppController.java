@@ -2,13 +2,16 @@ package com.springboot.yhkj.admin.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,8 +60,26 @@ public class AppController {
 		String fileName = strDate + imageFile.getOriginalFilename().substring(imageFile.getOriginalFilename().indexOf("."),imageFile.getOriginalFilename().length());
 		String realPath = httpSession.getServletContext().getRealPath("/userfiles");
 		System.out.println("realPath : "+realPath);
-		try {
+		/*try {
+
 			FileUtils.copyInputStreamToFile(imageFile.getInputStream(),new File(realPath, fileName));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+*/
+
+
+		File upload = new File(realPath);
+		if(!upload.exists()) upload.mkdirs();
+		try {
+			// Get the file and save it somewhere
+			byte[] bytes = imageFile.getBytes();
+			Path pathimg = Paths.get(realPath + fileName);
+			Files.write(pathimg, bytes);
+
+			/*redirectAttributes.addFlashAttribute("message",
+					"You successfully uploaded '" + file.getOriginalFilename() + "'");*/
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,8 +106,23 @@ public class AppController {
 				String realPath = httpSession.getServletContext().getRealPath("/userfiles");
 				System.out.println("realPath : "+realPath);
 				System.out.println("fileName : "+fileName);
-				try {
+				/*try {
 					FileUtils.copyInputStreamToFile(file.getInputStream(),new File(realPath, fileName));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}*/
+				File upload = new File(realPath);
+				if(!upload.exists()) upload.mkdirs();
+				try {
+					// Get the file and save it somewhere
+
+					byte[] bytes = file.getBytes();
+					Path pathimg = Paths.get(realPath + fileName);
+					Files.write(pathimg, bytes);
+
+			/*redirectAttributes.addFlashAttribute("message",
+					"You successfully uploaded '" + file.getOriginalFilename() + "'");*/
+
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
