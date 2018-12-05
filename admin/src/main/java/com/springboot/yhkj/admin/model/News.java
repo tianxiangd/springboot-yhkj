@@ -1,12 +1,10 @@
 package com.springboot.yhkj.admin.model;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
-import org.hibernate.mapping.Value;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.sql.Date;
 
 @Entity
 public class News extends BaseObject {
@@ -14,7 +12,27 @@ public class News extends BaseObject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	private String title;
+	private String description;
+	private Integer category;
 
+	private String image;
+	private String content;
+	/*private Date addDate;
+	private Date updateDate;*/
+
+	private Integer state;
+
+	//private Integer commendState;
+
+
+	private Integer browses;
+
+	private Integer likes;
+
+	private Integer comments;
+
+	private Integer score;
 	public Integer getId() {
 		return id;
 	}
@@ -65,7 +83,7 @@ public class News extends BaseObject {
 		this.content = content;
 	}
 
-	public Date getAddDate() {
+	/*public Date getAddDate() {
 		return addDate;
 	}
 
@@ -79,7 +97,7 @@ public class News extends BaseObject {
 
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
-	}
+	}*/
 
 	public Integer getState() {
 		return state;
@@ -89,13 +107,13 @@ public class News extends BaseObject {
 		this.state = state;
 	}
 
-	public Integer getCommendState() {
+	/*public Integer getCommendState() {
 		return commendState;
 	}
 
 	public void setCommendState(Integer commendState) {
 		this.commendState = commendState;
-	}
+	}*/
 
 	public Integer getBrowses() {
 		return browses;
@@ -129,27 +147,7 @@ public class News extends BaseObject {
 		this.score = score;
 	}
 
-	private String title;
-	private String description;
-	private Integer category;
 
-	private String image;
-	private String content;
-	private Date addDate;
-	private Date updateDate;
-
-	private Integer state;
-
-	private Integer commendState;
-
-
-	private Integer browses;
-
-	private Integer likes;
-
-	private Integer comments;
-
-	private Integer score;
 
 
 

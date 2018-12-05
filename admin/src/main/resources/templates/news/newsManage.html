@@ -67,11 +67,7 @@
                                         </select>
 	                                </div>
 	                                <div class="col-sm-2 m-b-xs">
-	                                    <select name="commendState" id="commendState" class="form-control">
-	                                    	<option value="0" th:selected="${news.commendState==0}">--请选择推荐状态--</option>
-	                                    	<option value="1" th:selected="${news.commendState==1}">正常</option>
-	                                    	<option value="2" th:selected="${news.commendState==2}">推荐</option>
-                                        </select>
+
 	                                </div>
 	                                <div class="col-sm-2 m-b-xs">
 	                                    <select name="orderBy" id="orderBy" class="form-control">
@@ -126,11 +122,10 @@
 	                                    	<tr th:each="news : ${newsList}">
 										   		<td th:text="${news.id}">Onions</td>
 										      	<td th:text="${news.title}">Onions</td>
-										      	<td th:text="${news.categoryName}">Onions</td>
-										      	<td th:text="${news.addDate}">Onions</td>
+										      	<td>Onions</td>
+										      	<td>Onions</td>
 										      	<td>
-										      		<a href="#" th:onclick="'javascript:updateState('+${news.id}+',0,2);'" title="状态"><i class="" th:class="${news.commendState} == 2? 'fa fa-arrow-up text-danger' : 'fa fa-arrow-down text-navy'"></i></a>
-										      	</td>
+												</td>
 										      	<td>
 										      		<a th:href="@{'newsEdit?id='+${news.id}}" title="修改"><i class="fa fa-edit text-navy"></i></a>
 										      		&nbsp;&nbsp;&nbsp;&nbsp;

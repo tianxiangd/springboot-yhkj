@@ -89,7 +89,7 @@ public class NewsController {
 		//输出
 		model.addAttribute("newsCategoryList", newsCategoryList);
 		model.addAttribute("newsList", newsList);
-		String pageHTML = PageUtil.getPageContent("newsManage_{pageCurrent}_{pageSize}_{pageCount}?title="+news.getTitle()+"&category="+news.getCategory()+"&commendState="+news.getCommendState()+"&orderBy="+news.getOrderBy(), pageCurrent, pageSize, pageCount);
+		String pageHTML = PageUtil.getPageContent("newsManage_{pageCurrent}_{pageSize}_{pageCount}?title="+news.getTitle()+"&orderBy="+news.getOrderBy(), pageCurrent, pageSize, pageCount);
 		model.addAttribute("pageHTML",pageHTML);
 		model.addAttribute("news",news);
 		
@@ -167,8 +167,10 @@ public class NewsController {
 			news.setLikes(0);
 			news.setScore(0);
 			news.setState(0);
-			news.setAddDate(new Date());
-			news.setUpdateDate(new Date());
+
+			//news.setAddDate(new Date());
+			//news.setUpdateDate(new Date());
+			//news.setCommendState(0);
 			if(news.getId()!=0){
 				newsService.updateNews(news);
 			} else {
@@ -191,9 +193,9 @@ public class NewsController {
 		if(news.getState()==0){
 			news.setState(newsO.getState());
 		}
-		if(news.getCommendState()==0){
+		/*if(news.getCommendState()==0){
 			news.setCommendState(newsO.getCommendState());
-		}
+		}*/
 		if(news.getBrowses()==0){
 			news.setBrowses(newsO.getBrowses());
 		}
