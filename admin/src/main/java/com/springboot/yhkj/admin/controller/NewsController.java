@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -168,8 +169,9 @@ public class NewsController {
 			news.setScore(0);
 			news.setState(0);
 
-			//news.setAddDate(new Date());
-			//news.setUpdateDate(new Date());
+
+			news.setAddDate(new Date());
+			news.setUpdateDate(new Date());
 			//news.setCommendState(0);
 			if(news.getId()!=0){
 				newsService.updateNews(news);

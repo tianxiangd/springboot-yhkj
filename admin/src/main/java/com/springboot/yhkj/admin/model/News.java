@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Date;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class News extends BaseObject {
@@ -18,8 +20,9 @@ public class News extends BaseObject {
 
 	private String image;
 	private String content;
-	/*private Date addDate;
-	private Date updateDate;*/
+	private Date adddate;
+
+	private Date updatedate;
 
 	private Integer state;
 
@@ -83,21 +86,23 @@ public class News extends BaseObject {
 		this.content = content;
 	}
 
-	/*public Date getAddDate() {
-		return addDate;
+
+	public Date getAddDate() {
+		return adddate;
 	}
 
-	public void setAddDate(Date addDate) {
-		this.addDate = addDate;
+	public void setAddDate(Date adddate) {
+		this.adddate = adddate;
 	}
 
 	public Date getUpdateDate() {
-		return updateDate;
+		return updatedate;
 	}
 
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}*/
+	public void setUpdateDate(Date updatedate) {
+		this.updatedate = updatedate;
+	}
+
 
 	public Integer getState() {
 		return state;
