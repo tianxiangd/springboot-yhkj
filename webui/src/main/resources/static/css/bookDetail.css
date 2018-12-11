@@ -1,0 +1,76 @@
+﻿
+@charset "utf-8";
+/* CSS Document */
+#bwrap{ width:1160px; margin:0 auto; height:auto; }
+.book_detail,.book_intro,.literature{width: 1160px;margin: 0 auto;}
+
+/***图书模块***/
+.book_detail{margin: 20px auto 35px;}
+.book_detail_con{padding:32px;border: 1px solid #dbe3ee;border-top: 2px solid #2e8cf9;background:#f2f6f9;}
+.book_img{width: 196px;height: 280px;padding: 18px;border: 1px solid #dbe3ee;background: #ecf1f7;}
+.book_con{width: 825px;padding: 9px 0;}
+.book_con h2 .title{font-size: 16px;font-weight: bold;color: #2570c7;margin-bottom: 15px;}
+.book_con h2 .col_btn{font-size: 14px;color: #707582;}
+.book_con h2 .col_btn:hover{color: #2570c7;}
+.book_con h2 .col_btn i{width: 14px;height: 16px;margin-right: 5px;}
+.book_con_list{border: 1px solid #dbe3ee;background: #ecf1f7;padding: 15px 0;overflow: hidden;}
+.book_con_list ul{padding: 0 30px;border-right: 1px dotted #abafb3;width:268px;}
+.book_con_list ul:first-child{padding: 0 30px 0 20px;}
+.book_con_list ul li{font-size: 13px;line-height: 28px; max-width:300px;}
+.book_con_list ul li span{color: #707582;}
+.book_con_list ul li strong{color: #333;font-weight:inherit;}
+.reading,.fix_price,.book_con_list{margin-bottom: 15px;}
+.reading span,.fix_price span{font-size: 15px;margin-right: 10px;}
+.reading a{width: 124px;height: 26px;font-size:13px;color:#ffffff;text-align:center;line-height:26px;margin-right: 15px;}
+.book_detail_con .book_con .blue_bg{background: #2e8cf9;border: 1px solid #2570c7;border-radius: 3px;-webkit-border-radius:3px;-moz-border-radius:3px;}
+.book_detail_con .book_con .blue_bg:hover{background: #1a74dc;}
+.fix_price a{height: 24px;line-height:24px;padding: 0 20px;background: #e4eaf2;border: 1px solid #bbc3cf;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;font-size: 13px;color: #707582;margin-right: 16px;}
+.fix_price a.active{color: #2570c7;border-color: #2570c7;background: url(../images/img-icon/triangle.png) no-repeat bottom right;}
+.fix_price .add_cart{padding: 0 16px;height: 24px;line-height: 24px;font-size: 13px;color: #ffffff;margin-right: 0;}
+.fix_price .add_cart i{width: 20px;height: 16px;background: url(../images/img-icon/icon_list.png) no-repeat -161px -34px;margin-right: 5px;}
+.prompt{font-size: 13px;color: #707582;}
+.prompt a{color: #ff7e00;margin: 0 3px;}
+/*图书介绍*/
+.gray_bg{background: #f2f6f9;border: 1px solid #dbe3ee;}
+.data_heading{height: 36px;line-height: 36px;background: #dbe3ee;overflow: hidden;}
+.data_heading h2{width: 115px;font-size: 18px;color:#ffffff;background: #2e8cf9;text-align: center;line-height: 36px;}
+.data_heading span{font-size: 14px;color: #707582;font-weight: normal;margin: 5px 0 0 10px;*margin-bottom:10px;height: 20px;}
+.book_intro_con{padding: 28px 32px;}
+.book_intro_con_det{margin-bottom: 20px;}
+.h3_title{height: 12px;border-bottom: 1px solid #bbc3cf;margin-bottom: 22px;}
+.h3_title span{background: #f2f6f9;padding: 0 10px;font-size: 16px;}
+.h3_title i{width: 8px;height: 12px;background:#f2f6f9 url(../images/img-icon/icon_list.png) no-repeat -190px -36px;margin-bottom: 3px;}
+.book_intro_con_det p{text-indent: 2em;line-height: 30px;font-size: 14px;padding-left: 18px;}
+/*目录*/
+.catalog span strong{display:inline-block;letter-spacing:2em;margin-right: -2em;*margin-right:0;font-weight: normal;}
+.catalog-list{width:760px;margin-top: 20px;font-size: 14px;padding-left: 18px;}
+.catalog-list li{width: 100%;background: url(../images/dot-line-1.png) no-repeat 35px 12px;margin: 5px 0;}
+.catalog-list li a i{display:inline-block;width: 13px;height: 13px;background: url(../images/img-icon/icon_list.png) no-repeat -206px -37px;margin-right:10px;margin-bottom: 1px;}
+.catalog-list li a{background: #f2f6f9;padding-right: 8px;line-height: 30px;}
+.catalog-list li span{float: right;background: #f2f6f9;width:75px;padding-left: 15px;color: #707582;font-size: 13px;line-height:30px;position: relative;}
+.catalog-list li span i{width:13px;height: 13px;position: absolute;top:8px;right:0;left:95px;}
+.catalog-list li div.active a i{background-position: -225px -37px;}
+.catalog-list li div.active span i{background-position: -266px 0;}
+.catalog-list li ul{padding-left: 30px;}
+.catalog-list li ul li a{font-weight: normal;}
+.catalog-list li.no-bg{background: #f2f6f9;}
+.catalog-list li.no-bg strong{font-weight: normal;}
+.catalog-list li .catalog-det a{color: #707582;font-size: 13px;}
+
+/*参考文献*/
+.literature{margin-top: 35px;}
+.literature .data_heading{padding: 0 20px;}
+.literature h3{font-size: 16px;font-weight: bold; line-height: 36px;}
+.literature h3 a.open i{width: 14px;height: 10px;background: url(../images/img-icon/icon_list.png) no-repeat -246px -40px;margin-right: 10px;}
+.literature h3 a i{width: 10px;height: 14px;background: url(../images/img-icon/icon_list.png) no-repeat -166px 0;margin-right: 14px;}
+.more{color: #ff7e00;font-weight: 600;line-height: 36px;}
+.literature_con{padding: 20px 40px;}
+.lit_con_det{display: none;}
+.show{display: block;}
+.literature_con ul li{line-height: 32px;font-size: 14px;width: 960px;}
+.literature_con ul li a span{color: #2570c7;margin: 0 10px;}
+.lit_con_det ul p {line-height: 32px;  font-size: 14px;width: 960px;}
+ .lit_con_det ul p a {color:#2570c7;}
+.open_close {display: inline-block; width: 13px; height: 13px; background: url(../images/img-icon/icon_list.png) no-repeat -206px -37px; margin-right: 10px; margin-bottom: 1px;}
+.book_con_list ul li span a:hover {text-decoration:underline;}
+.book_con_list ul li span span {display:inline}

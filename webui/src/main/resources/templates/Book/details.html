@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${Book.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bookDetail.css}"/>
+</head>
+<body>
+
+
+<!--header-->
+<div th:replace="Fragments/header :: header">...</div>
+<div id="bwrap">
+    <!--导航栏目-->
+    <div class="breadnav">
+        <a href="/Home/Index">首页</a>&gt;<a href="/Search/List?type=2">图书</a>&gt;<span th:text="${Book.title}">航天型号元器件工程</span>
+    </div>
+    <!--主体介绍-->
+    <!--图书模块-->
+    <div class="book_detail">
+        <div class="book_detail_con clearfix">
+
+            <a class="fancybox fancybox.image book_img fl" id="17" href="/AudioVisual/Show?vpath=\book\B493C6BE-ABCC-4f9e-85BF-B10A35FBCFD4\B493C6BE-ABCC-4f9e-85BF-B10A35FBCFD4.jpg&amp;type=3&amp;vtag=1">
+                <img width="170" height="238" th:src="${Book.image}" src="/AudioVisual/Show?vpath=\book\B493C6BE-ABCC-4f9e-85BF-B10A35FBCFD4\B493C6BE-ABCC-4f9e-85BF-B10A35FBCFD4.jpg&amp;type=3&amp;vtag=1">
+            </a>
+            <div class="book_con fr">
+                <h2>
+                    <a href="javascript:void(0)" class="col_btn fr"><i onclick="addToFavorite('2', 'B493C6BE-ABCC-4f9e-85BF-B10A35FBCFD4',this)" class="notfav"></i>收藏</a>
+
+                    <a class="title" th:text="${Book.title}">航天型号元器件工程</a>
+                </h2>
+                <div class="book_con_list clearfix">
+                    <ul class="fl" style="height: 120px;">
+                        <li>
+                             <span id="author">
+                                 <strong>作者：</strong>
+                                 <span th:text="${Book.author}">
+                                                  </span>
+                             </span>
+                        </li>
+
+                        <li><span><strong>出版时间：</strong><span th:text="${Book.pubdate}">2011-10</span></span></li>
+                        <li><span><strong>豆瓣评分：</strong><span th:text="${Book.average}">2011-10</span></span></li>
+
+
+                    </ul>
+
+                    <ul class="fl no_bord_rt" style="height: 120px;">
+                        <li><span><strong>ISBN号：</strong><span th:text="${Book.isbn10}">978-7-5159-0051-3</span></span></li>
+                        <li><span><strong>页数：</strong><span th:text="${Book.pages}">370</span></span></li>
+                        <li><span><strong>出版社：</strong><span th:text="${Book.publisher}">中国宇航出版社</span></span></li>
+                        <li><span><strong>价格：</strong><span th:text="${Book.price}"></span></span></li>
+                    </ul>
+                </div>
+                <div class="reading">
+                    <span>阅读：</span>
+                    <a target="_blank" class="blue_bg" th:attrappend="" id="rpbook" style="background:#fff;color:#2e8cf9;border: 1px solid #2e8cf9;" title="您未购买，仅可试读部分内容">  PDF在线阅读</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--图书介绍-->
+    <div class="book_intro gray_bg">
+
+        <div class="book_intro_con">
+            <div class="book_intro_con_det">
+                <h3 class="h3_title"><i></i><span>内容简介</span></h3>
+                <p th:text="${Book.summary}">为了提高航天型号电子设备设计、生产、试验及管理人员元器件选择、应用的水平，编写了本教材。本教材根据科学性、实用性和针对性的原则，结合航天型号研制工作对元器件的选用程序，在总结经验的基础上，对元器件的基本概念作了简要的描述，并按照航天元器件的选择、采购、设计、制造、应用及分析的程序逐一进行了说明，重点在于元器件的选择与应用。本教材主要适用于航天型号研制队伍的基层人员（设计、生产、试验及管理人员）和航天型号的骨干人员（副主任设计师及以上人员）。</p>
+            </div>
+            <div class="book_intro_con_det catalog">
+                <h3 class="h3_title"><i></i><span><strong>目录</strong></span></h3>
+                <div class="book-dir">
+                    <ul class="catalog-list">
+
+                        <li>
+                            <div class="nav">
+                                        <span>Ⅰ-Ⅱ
+                                                <i onclick="addToFavorite('1', '3B81DAD5-6940-4be8-8097-D426027046E6',this)" class="notfav"></i>
+                                        </span>
+                                <i class="open_close"></i>
+                                <a data-action="3B81DAD5-6940-4be8-8097-D426027046E6" href="/Chapter/Detail?doi=3B81DAD5-6940-4be8-8097-D426027046E6" title="航天型号元器件工程——序">
+
+                                    航天型号元器件工程——序
+                                </a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--footer-->
+<div th:replace="Fragments/footer :: footer">...</div>
+<script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+<script>
+
+    $("#rpbook").click(function () {
+        var curWwwPath=window.document.location.href;
+        var pathName=window.document.location.pathname;
+        var pos=curWwwPath.indexOf(pathName);
+        var localhostPath=curWwwPath.substring(0,pos);
+        window.open(localhostPath+"/pdfjs/web/viewer.html?file="+attachmentUrl + "/preview?fileName=%3Dtest.pdf");
+
+    });
+
+</script>
+</body>
+</html>

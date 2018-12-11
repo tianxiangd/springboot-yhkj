@@ -4,7 +4,6 @@ package com.springboot.yhkj.webui.mapper;
 
 import com.springboot.yhkj.webui.pojo.Book;
 
-import com.springboot.yhkj.webui.pojo.News;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +17,6 @@ public interface BookMapper {
     List<Book> findAll();
 
     @Select("select * from book where id= #{id}")
-    News  findBookById(@Param("id") int id);
+    Book  findBookById(@Param("id") int id);
 
 }

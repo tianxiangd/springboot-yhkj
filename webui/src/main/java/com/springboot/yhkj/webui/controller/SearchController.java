@@ -19,8 +19,9 @@ import java.util.List;
 public class SearchController {
 
     @Autowired
-    private NewsService newsService;
-    private BookService bookService;
+    public NewsService newsService;
+    @Autowired
+    public BookService bookService;
     private static int PageSize = 10;
 
     @RequestMapping(value = "search/list",method= RequestMethod.GET)
